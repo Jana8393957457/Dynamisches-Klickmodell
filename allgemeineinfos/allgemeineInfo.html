@@ -314,17 +314,13 @@
          */
         var infos = "";
         //Erzeuge Titel-Ast
-        var infoNummer= "";
-        infoNummer = "<label>Informations Nummer:</label>";
-        infoNummer = infoNummer + "<div>" + infoArray[index].informationsNr + "</div>";
+        var informationsNr= "";
+        informationsNr = "<label>Informations Nummer:</label>";
+        informationsNr = informationsNr + "<div>" + infoArray[index].infoNummer + "</div>";
 
         //Erzeuge Bildmaterial
         var  infoBildmaterial= "";
-<<<<<<< HEAD
-        infoBildmaterial = "<label>Bildmaterial</label>";
-=======
         infoBildmaterial = "<label>Bildmaterial:</label>";
->>>>>>> 4100f867c71e8e1e3023b894016be14f313c343f
         infoBildmaterial =  infoBildmaterial + "<div>" + infoArray[index].bildmaterial + "</div>";
 
         //Erzeuge den Namen des Autors
@@ -347,7 +343,7 @@
         infoBuchstaben = "<label>Anzahl der Buchstaben:</label>";
         infoBuchstaben = infoBuchstaben + "<div>" + infoArray[index].buchstabenAnzahl + "</div>";
 
-        infos = "<div>" + infoNummer + "</div>" +
+        infos = "<div>" + informationsNr + "</div>" +
             "<div>" + infoBildmaterial + "</div>" +
             "<div>" + infoAutor + "</div>" +
             "<div>" + infoDatum + "</div>" +
@@ -421,12 +417,12 @@
     <!-- HILFSFUNKTIONEN-->
 
     <script type="text/javascript">
-        function infoEinhaengen(index, informationsNr) {
-            console.log("Funktion infoEinhaengen mit " + index + ", " + informationsNr);
+        function infoEinhaengen(index, ort) {
+            console.log("Funktion infoEinhaengen mit " + index + ", " + ort);
             /*Erzeugung eines HTML-Strings für eine Zeile
               durch Erzeugen eines HTML-Fragments für ein Workshop 
             */
-            $("#" + informationsNr).append(
+            $("#" + ort).append(
                 '<li id="' + index + '">' +
                 infos(index) +
                 '</li>'
