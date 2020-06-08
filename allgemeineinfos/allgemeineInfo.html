@@ -61,7 +61,7 @@
                     Bei Fragen stehen wir dir natürlich auch sehr gerne zur Verfügung. Viel Spaß!</p>
                 <div>
                     <p>Hier kannst Du dir
-                        <button class="startseiteButton" onclick="infosAnzeigen()">Informationen
+                        <button class="startseiteButton" onclick="infosAnzeigen('infoListe')">Informationen
                             anzeigen</button> lassen</p>
                 </div>
                 <!-- Bild vom Buchladen einfügen-->
@@ -132,11 +132,11 @@
         <!--CRUD Operatoren-->
 
         <!--ändern-->
-        <button class="crud-button" style="display: none" onclick="infosAnzeigenAendern('info')"> ändern </button>
+        <button class="crud-button" style="display: none" onclick="infosAnzeigenAendern('infoListe')"> ändern </button>
         <!--anlegen-->
         <button class="crud-button" style="display: none" onclick="zeigeEingabemaske()"> Anlegen </button>
         <!--löschen-->
-        <button class="crud-button" style="display: none" onclick="infosAnzeigenLoeschen('info')">
+        <button class="crud-button" style="display: none" onclick="infosAnzeigenLoeschen('infoListe')">
             Löschen
         </button>
 
@@ -309,7 +309,7 @@
 
 <script>
     function infos(index) {
-        console.log("Funktion workshop mit " + index);
+        console.log("Funktion infos mit " + index);
         /* In dieser Funktion wird jeweils der Arrayeintrag der index-ten Stelle als Ast erzeugt (der später in die Baumstruktur des DOM als Ast gehängt werden kann)
          */
         var infos = "";
@@ -320,7 +320,7 @@
 
         //Erzeuge Bildmaterial
         var  infoBildmaterial= "";
-        infoBildmaterial = "<label>Ort</label>";
+        infoBildmaterial = "<label>Bildmaterial</label>";
         infoBildmaterial =  infoBildmaterial + "<div>" + infoArray[index].bildmaterial + "</div>";
 
         //Erzeuge den Namen des Autors
@@ -344,11 +344,11 @@
         infoBuchstaben = infoBuchstaben + "<div>" + infoArray[index].buchstabenAnzahl + "</div>";
 
         infos = "<div>" + infoNummer + "</div>" +
-            "<div>" + bildmaterial + "</div>" +
-            "<div>" + nameAutor + "</div>" +
+            "<div>" + infoBildmaterial + "</div>" +
+            "<div>" + infoAutor + "</div>" +
             "<div>" + infoDatum + "</div>" +
-            "<div>" + zeichenAnzahl + "</div>" +
-            "<div>" + buchstabenAnzahl + "</div>";
+            "<div>" + infoZeichenAnzahl + "</div>" +
+            "<div>" + infoBuchstaben + "</div>";
 
         return infos;
 
@@ -417,12 +417,12 @@
     <!-- HILFSFUNKTIONEN-->
 
     <script type="text/javascript">
-        function infoEinhaengen(index, ort) {
-            console.log("Funktion workshopEinhaengen1 mit " + index + ", " + ort);
+        function infoEinhaengen(index, informationsNr) {
+            console.log("Funktion infoEinhaengen mit " + index + ", " + informationsNr);
             /*Erzeugung eines HTML-Strings für eine Zeile
               durch Erzeugen eines HTML-Fragments für ein Workshop 
             */
-            $("#" + ort).append(
+            $("#" + informationsNr).append(
                 '<li id="' + index + '">' +
                 infos(index) +
                 '</li>'
