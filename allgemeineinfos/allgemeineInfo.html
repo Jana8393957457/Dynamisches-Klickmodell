@@ -82,15 +82,13 @@
             <!-- Liste aller Events -->
             <ul id="infoListe">
             </ul>
-            <p>Test</p>
-
         </div>
 
 
         <!-- LOGINMASKE Admin-->
         <div id="loginMaske" style="display:none">
             <h2>Bitte logge dich ein Admin!</h2>
-            <form action="javascript:infosAnzeigenadm()" method="post">
+            <form action="javascript:infosAnzeigenadm('infoListe')" method="post">
                 <div class="formular">
                     <label>Benutzername</label>
                     <input type="text" placeholder="Benutzernamen eingeben" />
@@ -111,7 +109,7 @@
         <!-- LOGINMASKE MA -->
         <div id="loginMaskeMA" style="display:none">
             <h2>Bitte logge dich ein Mitarbeiter!</h2>
-            <form action="javascript:infosAnzeigenma()" method="post">
+            <form action="javascript:infosAnzeigenma('infoListe')" method="post">
 
                 <div class="formular">
                     <label>Benutzername</label>
@@ -227,24 +225,6 @@
         }
     </script>
 
-    <script type="text/javascript">
-        function zeigeAdminBereich() {
-            //Unsichtbarmachen der Loginmaske
-            $("#loginMaske").hide();
-            //Sichtbarmachen der Standardmaske            
-            $("#standardMaske").hide();
-
-            //Sichtbarmachen der erweiterten Funktionalitäten
-
-
-            //Login-Knopf zu Logout-Knopf machen
-            $("#login-button-admin").html("Ausloggen")
-                .attr("onclick", "ausloggen()");
-
-        }
-    </script>
-
-
 
     <!--MA Bereich Button-->
     <script type="text/javascript">
@@ -307,53 +287,53 @@
         infoArray[3] = new Info('6804', 'nein', 'J.Clarkson', '03.03.2020', 800, 789);
     </script>
 
-<script>
-    function infos(index) {
-        console.log("Funktion infos mit " + index);
-        /* In dieser Funktion wird jeweils der Arrayeintrag der index-ten Stelle als Ast erzeugt (der später in die Baumstruktur des DOM als Ast gehängt werden kann)
-         */
-        var infos = "";
-        //Erzeuge Titel-Ast
-        var infoNummer= "";
-       infoNummer = "<label>Informations Nummer:</label>";
-        infoNummer = infoNummer + "<div>" + infoArray[index].informationsNr + "</div>";
+    <script>
+        function infos(index) {
+            console.log("Funktion infos mit " + index);
+            /* In dieser Funktion wird jeweils der Arrayeintrag der index-ten Stelle als Ast erzeugt (der später in die Baumstruktur des DOM als Ast gehängt werden kann)
+             */
+            var infos = "";
+            //Erzeuge Titel-Ast
+            var informationsNr = "";
+            informationsNr = "<label>Informations Nummer:</label>";
+            informationsNr = informationsNr + "<div>" + infoArray[index].infoNummer + "</div>";
 
-        //Erzeuge Bildmaterial
-        var  bildmaterial= "";
-        bildmaterial = "<label>Bildmaterial:</label>";
-        bildmaterial =  bildmaterial + "<div>" + infoArray[index].infoBildmaterial + "</div>";
+            //Erzeuge Bildmaterial
+            var bildmaterial = "";
+            bildmaterial = "<label>Bildmaterial:</label>";
+            bildmaterial = bildmaterial + "<div>" + infoArray[index].infoBildmaterial + "</div>";
 
-        //Erzeuge den Namen des Autors
-        var nameAutor = "";
-        nameAutor = "<label>Name des Autors:</label>";
-        nameAutor = nameAutor + "<div>" + infoArray[index].infoAutor + "</div>";
+            //Erzeuge den Namen des Autors
+            var nameAutor = "";
+            nameAutor = "<label>Name des Autors:</label>";
+            nameAutor = nameAutor + "<div>" + infoArray[index].infoAutor + "</div>";
 
-        //Erzeuge das Datum des Eintrags
-        var datum = "";
-        datum = "<label>Datum:</label>";
-        datum = datum + "<div>" + infoArray[index].infoDatum + "</div>";
+            //Erzeuge das Datum des Eintrags
+            var datum = "";
+            datum = "<label>Datum:</label>";
+            datum = datum + "<div>" + infoArray[index].infoDatum + "</div>";
 
-        //Erzeuge die Anzahl der Zeichen im Text
-        var zeichenAnzahl = "";
-        zeichenAnzahll = "<label>Anzahl der Zeichen:</label>";
-        zeichenAnzahl =zeichenAnzahl + "<div>" + infoArray[index].infoZeichenAnzahl + "</div>";
+            //Erzeuge die Anzahl der Zeichen im Text
+            var zeichenAnzahl = "";
+            zeichenAnzahll = "<label>Anzahl der Zeichen:</label>";
+            zeichenAnzahl = zeichenAnzahl + "<div>" + infoArray[index].infoZeichenAnzahl + "</div>";
 
-        //Erzeuge die Anzahl der Buchstaben im Text
-        var buchstabenAnzahl = "";
-        buchstabenAnzahl = "<label>Anzahl der Buchstaben:</label>";
-        buchstabenAnzahl = buchstabenAnzahl + "<div>" + infoArray[index].infoBuchstaben + "</div>";
+            //Erzeuge die Anzahl der Buchstaben im Text
+            var buchstabenAnzahl = "";
+            buchstabenAnzahl = "<label>Anzahl der Buchstaben:</label>";
+            buchstabenAnzahl = buchstabenAnzahl + "<div>" + infoArray[index].infoBuchstaben + "</div>";
 
-        infos = "<div>" + infoNummer + "</div>" +
-            "<div>" + bildmaterial + "</div>" +
-            "<div>" + nameAutor + "</div>" +
-            "<div>" + datum + "</div>" +
-            "<div>" + zeichenAnzahl + "</div>" +
-            "<div>" + buchstabenAnzahl + "</div>";
+            infos = "<div>" + informationsNr + "</div>" +
+                "<div>" + bildmaterial + "</div>" +
+                "<div>" + nameAutor + "</div>" +
+                "<div>" + datum + "</div>" +
+                "<div>" + zeichenAnzahl + "</div>" +
+                "<div>" + buchstabenAnzahl + "</div>";
 
-        return infos;
+            return infos;
 
-    }
-</script>
+        }
+    </script>
 
 
 
@@ -384,6 +364,9 @@
         }
     </script>
 
+
+    <!-- Anzeigen##################################-->
+    <!-- Kunde#####################################-->
     <script type="text/javascript">
         //Anzeigen für Kunde
         function infosAnzeigen(ort) {
@@ -405,6 +388,117 @@
     </script>
 
     <script type="text/javascript">
+        function infoEinhaengen(index, ort) {
+            console.log("Funktion infoEinhaengen mit " + index + ", " + ort);
+            /*Erzeugung eines HTML-Strings für eine Zeile
+              durch Erzeugen eines HTML-Fragments für ein Workshop 
+            */
+            $("#" + ort).append(
+                '<li id="' + index + '">' +
+                infos(index) +
+                '</li>'
+            );
+        }
+    </script>
+
+    <!-- Admin#####################################-->
+    <script type="text/javascript">
+        function infosAnzeigenadm(ort) {
+            console.log('InfosAnzeigenADM: ' + ort);
+            //Anzeigen für Admin
+            $(".view").hide();
+            $("#liste").show();
+            $("#loginMaske").hide();
+
+
+            //Login-Knopf zu Logout-Knopf machen
+            $("#login-button-admin").html("Ausloggen")
+                .attr("onclick", "ausloggen()");
+
+            //CRUD-Funktionen für Admins anzeigen  
+            $(".adminButton").css("display", "inline-block");
+
+
+            //Listenansicht initialisieren
+            $('#' + ort).empty();
+
+            //Array-Schleife: für jeden Eintrag Erzeugung eines Buch-Eintrags in die Listenansicht
+            for (var i = 0; i < infoArray.length; i++) {
+                infoEinhaengen(i, ort);
+            }
+
+        }
+    </script>
+
+
+    <!-- Mitarbeiter#####################################-->
+    <script type="text/javascript">
+        function infosAnzeigenma(ort) {
+            console.log('InfosAnzeigenMA: ' + ort);
+            //Anzeigen für Mitarbeiter
+            $(".view").hide();
+            $("#liste").show();
+            $("#loginMaskeMA").hide();
+
+            //Login-Knopf zu Logout-Knopf machen
+            $("#login-button-MA").html("Ausloggen")
+                .attr("onclick", "ausloggen()");
+
+            //Listenansicht initialisieren
+            $('#' + ort).empty();
+
+            //Array-Schleife: für jeden Eintrag Erzeugung eines Buch-Eintrags in die Listenansicht
+            for (var i = 0; i < infoArray.length; i++) {
+                infoEinhaengenma(i, ort);
+            }
+
+        }
+    </script>
+
+    <script type="text/javascript">
+        function infoEinhaengenma(index, ort) {
+            console.log("Funktion workshopEinhaengenAendern mit " + index + ", " + ort);
+            /*Erzeugung eines HTML-Strings für eine Zeile
+              durch Erzeugen eines HTML-Fragments für ein Workshop und dazu jeweils ein Ändern-button */
+            $("#" + ort).append(
+                '<li id="' + index + '">' +
+                infos(index)
+                //  + '</li>'
+                // Ändern Icon
+                +
+                button(index, "zeigeEingabemaskeMA", "../pics/bearbeiten_icon.png") +
+                '</li>'
+            );
+
+        }
+    </script>
+
+<script type="text/javascript">        
+//Ändern-Funktion für Mitarbeiter, damit nach dem abspeichern die richtige Listenansicht gezeigt wird
+    function zeigeEingabemaskeMA(index) {
+        console.log('zeigeEingabemaskeMA ' + index);
+
+        //nur Eingabemaske sichtbar machen
+        $(".view").hide();
+        $("#eingabe").show();
+
+        //Eingabemaske initialisieren
+        $("#eingabe input").val("");
+        $("#eingabe input[type='submit']").val("Speichern");
+
+        //Daten in die Eingabemaske eintragen
+        $("#eingabeName").val(workshopArray[index].workshopName);
+        $("#eingabeOrt").val(workshopArray[index].workshopOrt);
+        $("#eingabeDauer").val(workshopArray[index].workshopDauer);
+        $("#eingabeMaxTeilnehmer").val(workshopArray[index].workshopMaxTeilnehmer);
+        $("#eingabeMaterialien").val(workshopArray[index].workshopMaterialien);
+        $("#eingabeWorkshopNr").val(workshopArray[index].workshopWorkshopNr);
+        $("#eingabe").attr("action", "javascript:datenSpeichernMA('" + index + "')");
+    }</script>
+
+
+
+    <script type="text/javascript">
         //Löschen
         function infoLoeschen(index) {
             console.log("Funktion infoLoeschen mit " + index);
@@ -417,18 +511,6 @@
     <!-- HILFSFUNKTIONEN-->
 
     <script type="text/javascript">
-        function infoEinhaengen(index, ort) {
-            console.log("Funktion infoEinhaengen mit " + index + ", " + ort);
-            /*Erzeugung eines HTML-Strings für eine Zeile
-              durch Erzeugen eines HTML-Fragments für ein Workshop 
-            */
-            $("#" + ort).append(
-                '<li id="' + index + '">' +
-                infos(index) +
-                '</li>'
-            );
-        }
-
         function info(index) {}
 
         function button(id, func, bildpfad) {}
