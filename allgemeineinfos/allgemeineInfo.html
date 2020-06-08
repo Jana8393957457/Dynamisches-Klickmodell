@@ -487,12 +487,12 @@
         $("#eingabe input[type='submit']").val("Speichern");
 
         //Daten in die Eingabemaske eintragen
-        $("#eingabeName").val(workshopArray[index].workshopName);
-        $("#eingabeOrt").val(workshopArray[index].workshopOrt);
-        $("#eingabeDauer").val(workshopArray[index].workshopDauer);
-        $("#eingabeMaxTeilnehmer").val(workshopArray[index].workshopMaxTeilnehmer);
-        $("#eingabeMaterialien").val(workshopArray[index].workshopMaterialien);
-        $("#eingabeWorkshopNr").val(workshopArray[index].workshopWorkshopNr);
+        $("#input-Informationsnummer").val(infoArray[index].infoNummer);
+        $("#input-Bildmaterial").val(infoArray[index].infoBildmaterial);
+        $("#input-Name-Autor").val(infoArray[index].infoAutor);
+        $("#input-Datum").val(infoArray[index].infoDatum);
+        $("#input-Zeichen-Anzahl").val(infoArray[index].infoZeichenAnzahl);
+        $("#input-Buchstaben-Anzahl").val(infoArray[index].infoBuchstaben);
         $("#eingabe").attr("action", "javascript:datenSpeichernMA('" + index + "')");
     }</script>
 
