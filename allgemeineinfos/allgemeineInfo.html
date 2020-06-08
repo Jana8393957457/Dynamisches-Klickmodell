@@ -312,45 +312,45 @@
         console.log("Funktion workshop mit " + index);
         /* In dieser Funktion wird jeweils der Arrayeintrag der index-ten Stelle als Ast erzeugt (der später in die Baumstruktur des DOM als Ast gehängt werden kann)
          */
-        var workshop = "";
+        var infos = "";
         //Erzeuge Titel-Ast
-        var name = "";
-        name = "<label>Info</label>";
-        name = infoNummer + "<div>" + infoArray[index].informationsNr + "</div>";
+        var informationsNr= "";
+        informationsNr = "<label>Info</label>";
+        informationsNr = infoNummer + "<div>" + infoArray[index].informationsNr + "</div>";
 
-        //Erzeuge Ort
-        var ort = "";
-        ort = "<label>Ort</label>";
-        ort = ort + "<div>" + infoArray[index].workshopOrt + "</div>";
+        //Erzeuge Bildmaterial
+        var  bildmaterial = "";
+        bildmaterial = "<label>Ort</label>";
+        bildmaterial =  bildmaterial + "<div>" + infoArray[index].infoBildmaterial + "</div>";
 
-        //Erzeuge Dauer
-        var dauer = "";
-        dauer = "<label>Dauer</label>";
-        dauer = dauer + "<div>" + infoArray[index].workshopDauer + "</div>";
+        //Erzeuge den Namen des Autors
+        var nameAutor = "";
+        nameAutor = "<label>Dauer</label>";
+        nameAutor = nameAutor + "<div>" + infoArray[index].infoAutor + "</div>";
 
-        //Erzeuge Max. Teilnehmer
-        var maxTeilnehmer = "";
-        maxTeilnehmer = "<label>Max.Teilnehmer</label>";
-        maxTeilnehmer = maxTeilnehmer + "<div>" + infoArray[index].workshopMaxTeilnehmer + "</div>";
+        //Erzeuge das Datum des Eintrags
+        var datum = "";
+        datum = "<label>Max.Teilnehmer</label>";
+        datum = datum + "<div>" + infoArray[index].infoDatum + "</div>";
 
-        //Erzeuge Materialien
-        var materialien = "";
-        materialien = "<label>Materialien</label>";
-        materialien = materialien + "<div>" + infoArray[index].workshopMaterialien + "</div>";
+        //Erzeuge die Anzahl der Zeichen im Text
+        var zeichenAnzahl = "";
+        zeichenAnzahl = "<label>Materialien</label>";
+        zeichenAnzahl =zeichenAnzahl + "<div>" + infoArray[index].infoZeichenAnzahl + "</div>";
 
-        //Erzeuge WorkshopNr
-        var workshopNr = "";
-        workshopNr = "<label>WorkshopNr</label>";
-        workshopNr = workshopNr + "<div>" + infoArray[index].workshopWorkshopNr + "</div>";
+        //Erzeuge die Anzahl der Buchstaben im Text
+        var buchstabenAnzahl = "";
+        buchstabenAnzahl = "<label>WorkshopNr</label>";
+        buchstabenAnzahl = buchstabenAnzahl + "<div>" + infoArray[index].infoBuchstaben + "</div>";
 
-        workshop = "<div>" + name + "</div>" +
-            "<div>" + ort + "</div>" +
-            "<div>" + dauer + "</div>" +
-            "<div>" + maxTeilnehmer + "</div>" +
-            "<div>" + materialien + "</div>" +
-            "<div>" + workshopNr + "</div>";
+        infos = "<div>" + informationsNr + "</div>" +
+            "<div>" + infoBildmaterial + "</div>" +
+            "<div>" + infoAutor + "</div>" +
+            "<div>" + infoDatum + "</div>" +
+            "<div>" + infoZeichenAnzahl + "</div>" +
+            "<div>" + infoBuchstaben + "</div>";
 
-        return workshop;
+        return infos;
 
     }
 </script>
