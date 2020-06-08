@@ -5,273 +5,286 @@
 * Licensed under GPL3, see http://www.gnu.org/licenses/gpl.html
 ******************************************************************** -->
 <html lang="de" id="top">
-  <head>
-      <title>Dynamisches Klickmodell</title>
-      <!-- Bestimme den vom Browser zu benutzenden Zeichensatz -->
-      <meta charset="UTF-8" />
-      <link href="../stylesheets/style-workshops.css" rel="stylesheet">
-	  
-	  <script type=text/javascript src="../client-js/jquery-3.5.1.min.js"></script>
-	  <style>
-       
-        .bildknopf{
-            height:40px;
-            background-color:white;
-            border:0px solid green;
-            margin:4px;
+
+<head>
+    <title>Dynamisches Klickmodell</title>
+    <!-- Bestimme den vom Browser zu benutzenden Zeichensatz -->
+    <meta charset="UTF-8" />
+    <link href="../stylesheets/style-workshops.css" rel="stylesheet">
+
+    <script type=text/javascript src="../client-js/jquery-3.5.1.min.js"></script>
+    <style>
+        .bildknopf {
+            height: 40px;
+            background-color: white;
+            border: 0px solid green;
+            margin: 4px;
         }
-        label{
-            text-decoration:underline;
+
+        label {
+            text-decoration: underline;
         }
     </style>
-  </head>
+</head>
 
-  <body class="startseite">
-    
+<body class="startseite">
+
     <header class="site-header">
-          
-      <!-- <p class="site-slogan">KLEUR het KOPJE</p> -->
-   
-    
-    <nav class="site-nav">
-    
-          <ul>
-			 <li> <a href="../index-dyn.html" class="site-logo"> KLEUR het KOPJE<!--<img src="Pics/logo-1.PNG"
+
+        <!-- <p class="site-slogan">KLEUR het KOPJE</p> -->
+
+
+        <nav class="site-nav">
+
+            <ul>
+                <li> <a href="../index-dyn.html" class="site-logo"> KLEUR het KOPJE
+                        <!--<img src="Pics/logo-1.PNG"
 					alt="KLEUR het KOPJE"
 					width= "180"	
 				    height="154"> -->
-				 </a></li>
-            <li><a href="../index-dyn.html" >Home</a></li>
-            <li><a href="../allgemeineInfos/allgemeineInfo.html">Allgemeine Informationen</a></li>  
-            <li><a href="workshops.html" class="sie-sind-hier">Workshops</a></li>
-            <li><a href="../events/events.html">Individuelle Events</a></li>
-            <li><a href="../buchungsanfragen/buchungsanfragen.html">Buchungsanfragen</a></li>
-          </ul>
-   
-			
-		<!-- Einloggen-button-->
-		
-		<button id="login-button-admin" onclick="zeigeLoginmaskeAdmin()"> Admin-Login</button>
-		<button id="login-button-MA" onclick="zeigeLoginmaskeMA()"> Mitarbeiter-Login </button>
-		
-		
-		
-    </nav>
-	  </header>
-		
-	     
+                    </a></li>
+                <li><a href="../index-dyn.html">Home</a></li>
+                <li><a href="../allgemeineInfos/allgemeineInfo.html">Allgemeine Informationen</a></li>
+                <li><a href="workshops.html" class="sie-sind-hier">Workshops</a></li>
+                <li><a href="../events/events.html">Individuelle Events</a></li>
+                <li><a href="../buchungsanfragen/buchungsanfragen.html">Buchungsanfragen</a></li>
+            </ul>
 
-		
-	<!-- Normaler content-->
-	  
+
+            <!-- Einloggen-button-->
+
+            <button id="login-button-admin" onclick="zeigeLoginmaskeAdmin()"> Admin-Login</button>
+            <button id="login-button-MA" onclick="zeigeLoginmaskeMA()"> Mitarbeiter-Login </button>
+
+
+
+        </nav>
+    </header>
+
+
+
+
+    <!-- Normaler content-->
+
     <main class="site-content">
-		
-		<div id="standardMaske" class="view">
-			
-			<h2 class="workshops-title"> Unsere Workshops </h2>
-			
-		<h4> Lust auf eine kreative Auszeit oder einfach mal entspannen? </h4>	
-			
-	    <div class="box1">
-		<img id ="polaroid" src="../pics/Einsteigerworkshops_polaroid.jpg" width ="230" height="400">
-			
-			</div>
-	       <div class="box1 absatzWorkshop"> 
-			   <p>
-				Dann bist du hier genau richtig! <br><br>
-				Bei uns findet jeder einen passenden Workshop. Unsere Werkstatt bietet 45 Plätze Keramik zu bemalen, nach deiner Kreation oder wenn du willst auch mit unserer Hilfe. <br><br>
-                Für die einen ist es Entspannung, eine Auszeit vom hektischen Alltag, ein willkommener Zeitvertreib oder eine gesellige Freizeitaktivität. <br>
-                Für die anderen ist es eine ganz neue (Selbst)Erfahrung, eine Inspiration bis hin zur Selbstverwirklichung oder auch eine Herausforderung.<br>
-                Für manche wird es zu einem Hobby oder gar zu einer Sucht.<br><br>
-                Unsere Keramik und unsere Farben stammen selbstverständlich aus einer nachhaltigen Herstellung. 
-		       </p>
-			</div>
-	
-	    <div class="box2"> 
-		<img id ="polaroid" src="../pics/Technikworkshops_polaroid.jpg" width="230" height="400">
-		
-			</div>
-			
-          <div class="box2 absatzWorkshop">
-			<p>
-		   
-          Keramik bemalen, wie geht das?<br> <br>
-				
-             (Fast) nichts leichter als das: <br>
-              1. Such dir einen Keramikrohling aus.<br>
-               2. Such dir deine Farben und Malgeräte aus.<br>
-             3. Los geht‘s!<br><br>
 
-          Anschließend wird die Keramik nur noch glasiert und fertiggebrannt (Das übernehmen wir).<br>
-         Falls du zum ersten Mal bei KLEUR het KOPJE bist, bekommst du natürlich vorher eine kurze Einweisung von uns.
-        Selbstverständlich kannst du dich jederzeit auch beraten lassen oder dir bei der Umsetzung deiner Ideen Unterstützung von uns holen.<br><br>
-         Für schwierigere Techniken oder große Projekte gibt es vielleicht auch was Passendes in unserem Workshop Angebot.
-        <br><br>
-         Schau doch einfach mal rein: 
+        <div id="standardMaske" class="view">
 
-		
-		    </p>
-			</div>
+            <h2 class="workshops-title"> Unsere Workshops </h2>
 
-     <!--CRUD-Buttons-->
-	
-	<!--Anlegen-->
-	 <button  class = "crud-button adminButton"  style="display: none" onclick="zeigeEingabemaske()"> Anlegen </button> 
-			
-	<!--Anzeigen-->	
-    <button id ="anzButton" class="crud-button" onclick="workshopsAnzeigen1('workshops')">  Alle Anzeigen  </button> <br/>
-	
-	<!--Ändern-->
-    <button  class="crud-button adminButton" style="display: none" onclick="workshopsAnzeigenAendern('workshops')"> Aendern </button>
-			
-	 <button  class="crud-button adminButton" style="display: none" onclick="workshopsAnzeigenAendern('workshops')"> Aendern </button>
-	
-	<!--löschen-->			
-	<button class="crud-button adminButton" style="display: none" onclick="workshopsAnzeigenLoeschen('workshops)"> 
-					 <!--<img src ="../pics/Muelleimer.icon.jpg" alt="Loeschen" width="50" height="23"> --> Löschen
-					  </button>
-			
-	
-		
-		<button class="buchen-button"> <a href="../buchungsanfragen/buchungsanfragen-dyn.html"> Jetzt Workshop buchen </a></button>
-			
-				   <footer>
-		  
-		           <p></p>
-                    <a href="#top">Zum Seitenanfang</a>
-    
-                   </footer>
-			
-	</div>
-		
-	
-		
-		 </main>
-	  
-	  
-	  
-				<!-- Login-Maske f. Admin-->
-		
-		<div id ="loginmaskeAdmin" class= "view">  
-         <h2>Logge dich ein!</h2>
-            <form action="javascript:workshopsAnzeigen('workshops')" method="post">
-                <div class="formular">
-                    <label>Benutzername</label>
-                    <input type="text" placeholder="Benutzernamen eingeben"/>  
-                </div>
-                <div class="formular">
-                    <label>Passwort</label>
-                    <input type="password" placeholder="Passwort eingeben"/>  
-                </div>
-                 <input class ="crud-button" type="submit" value="Login"/>
-		   
-              </form>
-		</div>
-	  
-	  
-				<!-- Login-Maske f. Mitarbeiter-->
-		
-		<div id ="loginmaskeMA" class= "view">  
-        <h2>Logge dich ein!</h2>
-            <form action="javascript:workshopsAnzeigenAendern('workshops')" method="post">
-                <div class="formular">
-                    <label>Benutzername</label>
-                    <input type="text" placeholder="Benutzernamen eingeben"/>  
-                </div>
-                <div class="formular">
-                    <label>Passwort</label>
-                    <input type="password" placeholder="Passwort eingeben"/>  
-                </div>
-            <input class ="crud-button" type="submit" value="Login"/>
-        </form>
-		</div>
-			
-		
-			<!--LISTENANSICHT -->
-		
-        <div id="liste" class="view" >
-            <h2>Folgende Workshops sind verfügbar:</h2>
-			
-				<button  class="crud-button adminButton" style="display: none" onclick="zeigeEingabemaske()"> Anlegen </button>
-            <div>
-                <!-- Liste aller workshops -->         
-                <ul id="workshops">                    
-                </ul>
+            <h4> Lust auf eine kreative Auszeit oder einfach mal entspannen? </h4>
+
+            <div class="box1">
+                <img id="polaroid" src="../pics/Einsteigerworkshops_polaroid.jpg" width="230" height="400">
+
             </div>
-			
-			   <footer id="footerliste">
-		
-		           <p></p>
+            <div class="box1 absatzWorkshop">
+                <p>
+                    Dann bist du hier genau richtig! <br><br>
+                    Bei uns findet jeder einen passenden Workshop. Unsere Werkstatt bietet 45 Plätze Keramik zu bemalen,
+                    nach deiner Kreation oder wenn du willst auch mit unserer Hilfe. <br><br>
+                    Für die einen ist es Entspannung, eine Auszeit vom hektischen Alltag, ein willkommener Zeitvertreib
+                    oder eine gesellige Freizeitaktivität. <br>
+                    Für die anderen ist es eine ganz neue (Selbst)Erfahrung, eine Inspiration bis hin zur
+                    Selbstverwirklichung oder auch eine Herausforderung.<br>
+                    Für manche wird es zu einem Hobby oder gar zu einer Sucht.<br><br>
+                    Unsere Keramik und unsere Farben stammen selbstverständlich aus einer nachhaltigen Herstellung.
+                </p>
+            </div>
+
+            <div class="box2">
+                <img id="polaroid" src="../pics/Technikworkshops_polaroid.jpg" width="230" height="400">
+
+            </div>
+
+            <div class="box2 absatzWorkshop">
+                <p>
+
+                    Keramik bemalen, wie geht das?<br> <br>
+
+                    (Fast) nichts leichter als das: <br>
+                    1. Such dir einen Keramikrohling aus.<br>
+                    2. Such dir deine Farben und Malgeräte aus.<br>
+                    3. Los geht‘s!<br><br>
+
+                    Anschließend wird die Keramik nur noch glasiert und fertiggebrannt (Das übernehmen wir).<br>
+                    Falls du zum ersten Mal bei KLEUR het KOPJE bist, bekommst du natürlich vorher eine kurze Einweisung
+                    von uns.
+                    Selbstverständlich kannst du dich jederzeit auch beraten lassen oder dir bei der Umsetzung deiner
+                    Ideen Unterstützung von uns holen.<br><br>
+                    Für schwierigere Techniken oder große Projekte gibt es vielleicht auch was Passendes in unserem
+                    Workshop Angebot.
+                    <br><br>
+                    Schau doch einfach mal rein:
+
+
+                </p>
+            </div>
+
+            <!--CRUD-Buttons-->
+
+            <!--Anlegen-->
+            <button class="crud-button adminButton" style="display: none" onclick="zeigeEingabemaske()"> Anlegen
+            </button>
+
+            <!--Anzeigen-->
+            <button id="anzButton" class="crud-button" onclick="workshopsAnzeigen1('workshops')"> Alle Anzeigen
+            </button> <br />
+
+            <!--Ändern-->
+            <button class="crud-button adminButton" style="display: none"
+                onclick="workshopsAnzeigenAendern('workshops')"> Aendern </button>
+
+            <button class="crud-button adminButton" style="display: none"
+                onclick="workshopsAnzeigenAendern('workshops')"> Aendern </button>
+
+            <!--löschen-->
+            <button class="crud-button adminButton" style="display: none"
+                onclick="workshopsAnzeigenLoeschen('workshops)">
+                <!--<img src ="../pics/Muelleimer.icon.jpg" alt="Loeschen" width="50" height="23"> --> Löschen
+            </button>
+
+
+
+            <button class="buchen-button"> <a href="../buchungsanfragen/buchungsanfragen-dyn.html"> Jetzt Workshop
+                    buchen </a></button>
+
+            <footer>
+
+                <p></p>
                 <a href="#top">Zum Seitenanfang</a>
-    
-               </footer>
-			
-	     </div>
-        
-			
-				   <!-- EINGABEMASKE --> 
-        <form id="eingabe"  class="view" action="">
-            <h2>Workshop neuanlegen/ändern</h2>
+
+            </footer>
+
+        </div>
+
+
+
+    </main>
+
+
+
+    <!-- Login-Maske f. Admin-->
+
+    <div id="loginmaskeAdmin" class="view">
+        <h2>Logge dich ein!</h2>
+        <form action="javascript:workshopsAnzeigen('workshops')" method="post">
             <div class="formular">
-                <label> Name </label> <!-- uv eingabeTitel-->
-                <input id="eingabeName" type="text" placeholder="Name eingeben"/>  
+                <label>Benutzername</label>
+                <input type="text" placeholder="Benutzernamen eingeben" />
             </div>
             <div class="formular">
-                <label> Ort </label>  <!-- uv eingabeAutor-->
-                <input id="eingabeOrt" type="text" placeholder="Ort eingeben"/>  
+                <label>Passwort</label>
+                <input type="password" placeholder="Passwort eingeben" />
             </div>
-            <div class="formular">
-                <label> Dauer</label>  <!-- uv eingabePreis-->
-                <input id="eingabeDauer" type="text" placeholder="Dauer eingeben"/>  
-            </div>
-            <div class="formular">
-                <label> Max. Teilnehmer </label> <!-- uv eingabeZustand-->
-                <input id="eingabeMaxTeilnehmer" type="text" placeholder="Max. Teilnehmer"/>    
-            </div>
-			
-			  <div class="formular">
-                <label> Materialien </label> 
-                <input id="eingabeMaterialien" type="text" placeholder=" Materialien angeben "/>    
-            </div>
-			
-			 <div class="formular">
-                <label> WorkshopNr </label> 
-                <input id="eingabeWorkshopNr" type="text" placeholder=" WorkshopNr eingeben "/>    
-            </div>
-            <input type="submit" value="Speichern"/>
-			
-			
-			<button class="crud-button" onclick="zurueckEingabemaske()"> Zurück zur Übersicht </button>
-			
-			   <footer>
-		
-		         <p></p>
-               <a href="#top">Zum Seitenanfang</a>
-      
-               </footer>
-			
+            <input class="crud-button" type="submit" value="Login" />
+
         </form>
-        
-			
+    </div>
+
+
+    <!-- Login-Maske f. Mitarbeiter-->
+
+    <div id="loginmaskeMA" class="view">
+        <h2>Logge dich ein!</h2>
+        <form action="javascript:workshopsAnzeigenAendern('workshops')" method="post">
+            <div class="formular">
+                <label>Benutzername</label>
+                <input type="text" placeholder="Benutzernamen eingeben" />
+            </div>
+            <div class="formular">
+                <label>Passwort</label>
+                <input type="password" placeholder="Passwort eingeben" />
+            </div>
+            <input class="crud-button" type="submit" value="Login" />
+        </form>
+    </div>
+
+
+    <!--LISTENANSICHT -->
+
+    <div id="liste" class="view">
+        <h2>Folgende Workshops sind verfügbar:</h2>
+
+        <button class="crud-button adminButton" style="display: none" onclick="zeigeEingabemaske()"> Anlegen </button>
+        <div>
+            <!-- Liste aller workshops -->
+            <ul id="workshops">
+            </ul>
+        </div>
+
+        <footer id="footerliste">
+
+            <p></p>
+            <a href="#top">Zum Seitenanfang</a>
+
+        </footer>
+
+    </div>
+
+
+    <!-- EINGABEMASKE -->
+    <form id="eingabe" class="view" action="">
+        <h2>Workshop neuanlegen/ändern</h2>
+        <div class="formular">
+            <label> Name </label> <!-- uv eingabeTitel-->
+            <input id="eingabeName" type="text" placeholder="Name eingeben" />
+        </div>
+        <div class="formular">
+            <label> Ort </label> <!-- uv eingabeAutor-->
+            <input id="eingabeOrt" type="text" placeholder="Ort eingeben" />
+        </div>
+        <div class="formular">
+            <label> Dauer</label> <!-- uv eingabePreis-->
+            <input id="eingabeDauer" type="text" placeholder="Dauer eingeben" />
+        </div>
+        <div class="formular">
+            <label> Max. Teilnehmer </label> <!-- uv eingabeZustand-->
+            <input id="eingabeMaxTeilnehmer" type="text" placeholder="Max. Teilnehmer" />
+        </div>
+
+        <div class="formular">
+            <label> Materialien </label>
+            <input id="eingabeMaterialien" type="text" placeholder=" Materialien angeben " />
+        </div>
+
+        <div class="formular">
+            <label> WorkshopNr </label>
+            <input id="eingabeWorkshopNr" type="text" placeholder=" WorkshopNr eingeben " />
+        </div>
+        <input type="submit" value="Speichern" />
+
+
+        <button class="crud-button" onclick="zurueckEingabemaske()"> Zurück zur Übersicht </button>
+
+        <footer>
+
+            <p></p>
+            <a href="#top">Zum Seitenanfang</a>
+
+        </footer>
+
+    </form>
+
+
     <!-- Beginn Java Script-->
-	  
-	  <script type="text/javascript">
-	
-	   function zeigeLoginmaskeAdmin(){
+
+    <script type="text/javascript">
+        function zeigeLoginmaskeAdmin() {
             console.log('zeigeLoginmaskeAdmin');
             //nur Loginansicht sichtbar machen
             $(".view").hide();
             $("#loginmaskeAdmin").show();
         }
-		 
-		    function zeigeLoginmaskeMA(){
+
+        function zeigeLoginmaskeMA() {
             console.log('zeigeLoginmaskeMA');
             //nur Loginansicht sichtbar machen
             $(".view").hide();
             $("#loginmaskeMA").show();
-				
+
         }
-	/*  function zeigeKnoepfe(){       
+        /*  function zeigeKnoepfe(){       
             console.log('zeigeKnoepfe');
             //nur Standardsicht sichtbar machen
             $(".view").hide();
@@ -285,390 +298,397 @@
             $(".adminButton").css("display", "inline-block");
             
         } */
-		  
-		  function zurueckEingabemaske(){
-			  console.log('zurueckEingabemaske')
-			  $("view").hide();
-			  
-			  workshopsAnzeigenAendern('workshops');
-			  
-		  }
-		  
 
-		  
-		   function ausloggen(){
+        function zurueckEingabemaske() {
+            console.log('zurueckEingabemaske')
+            $("view").hide();
+
+            workshopsAnzeigenAendern('workshops');
+
+        }
+
+
+
+        function ausloggen() {
             //nur Standardsicht sichtbar machen
             $(".view").hide();
             $("#standardMaske").show();
             //Logout-Knopf zu Login-Knopf machen
             $("#login-button-admin").html("Admin-Login")
-                          .attr("onclick","zeigeLoginmaskeAdmin()");
-			$("#login-button-MA").html("Mitarbeiter-Login")
-                          .attr("onclick","zeigeLoginmaskeMA()");
+                .attr("onclick", "zeigeLoginmaskeAdmin()");
+            $("#login-button-MA").html("Mitarbeiter-Login")
+                .attr("onclick", "zeigeLoginmaskeMA()");
             $(".adminButton").css("display", "none");
         }
-		  
-	
-		  ausloggen();
-			
-		
-		  	
-		//Die Datenstruktur eines Workshops
-		function Workshop (name, ort, dauer, maxTeilnehmer, materialien, workshopNr){
+
+
+        ausloggen();
+
+
+
+        //Die Datenstruktur eines Workshops
+        function Workshop(name, ort, dauer, maxTeilnehmer, materialien, workshopNr) {
             console.log("Funktion workshop mit " + name + ort + dauer + maxTeilnehmer + materialien + workshopNr)
-			this.workshopName=name;
-			this.workshopOrt = ort;
-            this.workshopDauer=dauer;
-            this.workshopMaxTeilnehmer=maxTeilnehmer;
-			this.workshopMaterialien=materialien;
-			this.workshopWorkshopNr=workshopNr;
-			
-		}
-		  
-		//Dieses Array dient der Speicherung aller Workshops.
-	
-		var workshopArray = new Array();
-		workshopArray[0] = new Workshop('Einsteigerworkshops', 'Keramikwerkstatt','90 Minuten', '10 Personen', 'Alles was es gibt', '01');
-		workshopArray[1] = new Workshop('Themen-Workshop', 'Keramikwerkstatt', '90 Minuten', '10 Personen', 'Themenabhängig','02');
-		workshopArray[2] = new Workshop('Technik-Workshop', 'Keramikwerkstatt', '90 Minuten', '5 Personen', 'Technikenabhängig,', '03');
-		workshopArray[3]= new Workshop('Babyfußabdruck', 'Keramikwerkstatt', '90 Minuten', '3 Personen', 'Gips, Platte', '04');
-		workshopArray[4]= new Workshop('Tourismusworkshop', 'Keramikwerkstatt', '90 Minuten', '10 Personen', 'Tassen, Teller, einfaches Geschirr', '05' );
-		workshopArray[5]=new Workshop('Außerhaus-workshop', 'Keramikwerkstatt', '90 Minuten', '10 Personen','Alles was es gibt', '06');
-		
-		  
-	
-		  
-		  /* CRUD-Funktionen */
-		  
-		  
-		  // ANZEIGEN 
-		  
-		   function workshopsAnzeigen(ort){
-			console.log('workshopsAnzeigen: ' + ort);
+            this.workshopName = name;
+            this.workshopOrt = ort;
+            this.workshopDauer = dauer;
+            this.workshopMaxTeilnehmer = maxTeilnehmer;
+            this.workshopMaterialien = materialien;
+            this.workshopWorkshopNr = workshopNr;
+
+        }
+
+        //Dieses Array dient der Speicherung aller Workshops.
+
+        var workshopArray = new Array();
+        workshopArray[0] = new Workshop('Einsteigerworkshops', 'Keramikwerkstatt', '90 Minuten', '10 Personen',
+            'Alles was es gibt', '01');
+        workshopArray[1] = new Workshop('Themen-Workshop', 'Keramikwerkstatt', '90 Minuten', '10 Personen',
+            'Themenabhängig', '02');
+        workshopArray[2] = new Workshop('Technik-Workshop', 'Keramikwerkstatt', '90 Minuten', '5 Personen',
+            'Technikenabhängig,', '03');
+        workshopArray[3] = new Workshop('Babyfußabdruck', 'Keramikwerkstatt', '90 Minuten', '3 Personen',
+            'Gips, Platte', '04');
+        workshopArray[4] = new Workshop('Tourismusworkshop', 'Keramikwerkstatt', '90 Minuten', '10 Personen',
+            'Tassen, Teller, einfaches Geschirr', '05');
+        workshopArray[5] = new Workshop('Außerhaus-workshop', 'Keramikwerkstatt', '90 Minuten', '10 Personen',
+            'Alles was es gibt', '06');
+
+
+
+
+        /* CRUD-Funktionen */
+
+
+        // ANZEIGEN 
+
+        function workshopsAnzeigen(ort) {
+            console.log('workshopsAnzeigen: ' + ort);
             //nur Listenansicht sichtbar machen
             $(".view").hide();
             $("#liste").show();
-			   
-			
+
+
             //Login-Knopf zu Logout-Knopf machen
             $("#login-button-admin").html("Ausloggen")
-                          .attr("onclick","ausloggen()");
-		  
-          //CRUD-Funktionen für Admins anzeigen  
+                .attr("onclick", "ausloggen()");
+
+            //CRUD-Funktionen für Admins anzeigen  
             $(".adminButton").css("display", "inline-block");
-            
-		
+
+
             //Listenansicht initialisieren
-		 $('#' + ort).empty();
-			
-			//Array-Schleife: für jeden Eintrag Erzeugung eines Buch-Eintrags in die Listenansicht
-			for (var i = 0; i < workshopArray.length; i++) {
-				workshopEinhaengen(i, ort);
-			}
-			   
-		}
-		  //Für Kundenansicht ohne Ändern und Löschen Icon 
-		     function workshopsAnzeigen1(ort){
-			console.log('workshopsAnzeigen: ' + ort);
+            $('#' + ort).empty();
+
+            //Array-Schleife: für jeden Eintrag Erzeugung eines Buch-Eintrags in die Listenansicht
+            for (var i = 0; i < workshopArray.length; i++) {
+                workshopEinhaengen(i, ort);
+            }
+
+        }
+        //Für Kundenansicht ohne Ändern und Löschen Icon 
+        function workshopsAnzeigen1(ort) {
+            console.log('workshopsAnzeigen: ' + ort);
             //nur Listenansicht sichtbar machen
             $(".view").hide();
             $("#liste").show();
-		
+
             //Listenansicht initialisieren
-		 $('#' + ort).empty();
-			
-			//Array-Schleife: für jeden Eintrag Erzeugung eines Buch-Eintrags in die Listenansicht
-			for (var i = 0; i < workshopArray.length; i++) {
-				workshopEinhaengen1(i, ort);
-			}
-			   
-		}
-		
-		  //ANLEGEN
-		  
-            function datenSpeichern(index){
+            $('#' + ort).empty();
+
+            //Array-Schleife: für jeden Eintrag Erzeugung eines Buch-Eintrags in die Listenansicht
+            for (var i = 0; i < workshopArray.length; i++) {
+                workshopEinhaengen1(i, ort);
+            }
+
+        }
+
+        //ANLEGEN
+
+        function datenSpeichern(index) {
             console.log("Funktion datenSpeichern mit " + index);
             //Lesen der Benutzereingaben
-            var name=$("#eingabeName").val();
-            var ort=$("#eingabeOrt").val();
-            var dauer=$("#eingabeDauer").val();
-            var maxTeilnehmer=$("#eingabeMaxTeilnehmer").val();
-		    var materialien=$("#eingabeMaterialien").val();
-		    var workshopNr=$("#eingabeWorkshopNr").val();
-            
+            var name = $("#eingabeName").val();
+            var ort = $("#eingabeOrt").val();
+            var dauer = $("#eingabeDauer").val();
+            var maxTeilnehmer = $("#eingabeMaxTeilnehmer").val();
+            var materialien = $("#eingabeMaterialien").val();
+            var workshopNr = $("#eingabeWorkshopNr").val();
+
             //Die Länge des Arrays ist gerade immer genau 
             // um eins größer als der max. Index des Arrays
-            workshopArray[workshopArray.length] = new Workshop(name, ort, dauer, maxTeilnehmer, materialien, workshopNr);
-            
+            workshopArray[workshopArray.length] = new Workshop(name, ort, dauer, maxTeilnehmer, materialien,
+            workshopNr);
+
             workshopsAnzeigen("workshops");
         }
 
-		  
-		  // ÄNDERN
-		  
-		  
-		   function zeigeEingabemaske2(index){
-			console.log('zeigeEingabemaske2 ' + index);
-            
+
+        // ÄNDERN
+
+
+        function zeigeEingabemaske2(index) {
+            console.log('zeigeEingabemaske2 ' + index);
+
             //nur Eingabemaske sichtbar machen
             $(".view").hide();
             $("#eingabe").show();
-            
+
             //Eingabemaske initialisieren
             $("#eingabe input").val("");
-            $("#eingabe input[type='submit']").val("Speichern"); 
-                      
+            $("#eingabe input[type='submit']").val("Speichern");
+
             //Daten in die Eingabemaske eintragen
             $("#eingabeName").val(workshopArray[index].workshopName);
             $("#eingabeOrt").val(workshopArray[index].workshopOrt);
-			$("#eingabeDauer").val(workshopArray[index].workshopDauer);  
+            $("#eingabeDauer").val(workshopArray[index].workshopDauer);
             $("#eingabeMaxTeilnehmer").val(workshopArray[index].workshopMaxTeilnehmer);
             $("#eingabeMaterialien").val(workshopArray[index].workshopMaterialien);
-		    $("#eingabeWorkshopNr").val(workshopArray[index].workshopWorkshopNr);   
-            $("#eingabe").attr("action","javascript:datenSpeichern('" + index +"')");           
-		}
-		  
-		  
-		  //Ändern-Funktion für Mitarbeiter, damit nach dem abspeichern die richtige Listenansicht gezeigt wird
-		     function zeigeEingabemaskeMA(index){
-			console.log('zeigeEingabemaskeMA ' + index);
-            
-            //nur Eingabemaske sichtbar machen
-            $(".view").hide();
-            $("#eingabe").show();
-            
-            //Eingabemaske initialisieren
-            $("#eingabe input").val("");
-            $("#eingabe input[type='submit']").val("Speichern"); 
-                      
-            //Daten in die Eingabemaske eintragen
-            $("#eingabeName").val(workshopArray[index].workshopName);
-            $("#eingabeOrt").val(workshopArray[index].workshopOrt);
-			$("#eingabeDauer").val(workshopArray[index].workshopDauer);  
-            $("#eingabeMaxTeilnehmer").val(workshopArray[index].workshopMaxTeilnehmer);
-            $("#eingabeMaterialien").val(workshopArray[index].workshopMaterialien);
-		    $("#eingabeWorkshopNr").val(workshopArray[index].workshopWorkshopNr);   
-            $("#eingabe").attr("action","javascript:datenSpeichernMA('" + index +"')");           
-		}
-		 
-		  
-		    function datenSpeichernMA(index){
-            console.log("Funktion datenSpeichernMA mit " + index);
-            //Lesen der Benutzereingaben
-            var name=$("#eingabeName").val();
-            var ort=$("#eingabeOrt").val();
-            var dauer=$("#eingabeDauer").val();
-            var maxTeilnehmer=$("#eingabeMaxTeilnehmer").val();
-		    var materialien=$("#eingabeMaterialien").val();
-		    var workshopNr=$("#eingabeWorkshopNr").val();
-            
-            //Die Länge des Arrays ist gerade immer genau 
-            // um eins größer als der max. Index des Arrays
-            workshopArray[workshopArray.length] = new Workshop(name, ort, dauer, maxTeilnehmer, materialien, workshopNr);
-            
-           workshopsAnzeigenAendern("workshops");
+            $("#eingabeWorkshopNr").val(workshopArray[index].workshopWorkshopNr);
+            $("#eingabe").attr("action", "javascript:datenSpeichern('" + index + "')");
         }
 
-		  
-		  //Listenansicht mit Ändern-Icon für Mitarbeiter
-		     function workshopsAnzeigenAendern(ort){
-			console.log('workshopsAnzeigenAendern: ' + ort);
-            //nur Listenansicht sichtbar machen
+
+        //Ändern-Funktion für Mitarbeiter, damit nach dem abspeichern die richtige Listenansicht gezeigt wird
+        function zeigeEingabemaskeMA(index) {
+            console.log('zeigeEingabemaskeMA ' + index);
+
+            //nur Eingabemaske sichtbar machen
             $(".view").hide();
-            $("#liste").show();
-				 
-		    //Login-Knopf zu Logout-Knopf machen
-            $("#login-button-MA").html("Ausloggen")
-                          .attr("onclick","ausloggen()");
-		  
-            //Listenansicht initialisieren
-		 $('#' + ort).empty();
-			
-			//Array-Schleife: für jeden Eintrag Erzeugung eines Buch-Eintrags in die Listenansicht
-			for (var i = 0; i < workshopArray.length; i++) {
-				workshopEinhaengenAendern(i, ort);
-			}
-			   
-		}
-        
-		  //LÖSCHEN
-		  
-		    function workshopLoeschen(index){
-            console.log("Funktion workshopLoeschen mit " + index);
-            workshopArray.splice(index,1);
+            $("#eingabe").show();
+
+            //Eingabemaske initialisieren
+            $("#eingabe input").val("");
+            $("#eingabe input[type='submit']").val("Speichern");
+
+            //Daten in die Eingabemaske eintragen
+            $("#eingabeName").val(workshopArray[index].workshopName);
+            $("#eingabeOrt").val(workshopArray[index].workshopOrt);
+            $("#eingabeDauer").val(workshopArray[index].workshopDauer);
+            $("#eingabeMaxTeilnehmer").val(workshopArray[index].workshopMaxTeilnehmer);
+            $("#eingabeMaterialien").val(workshopArray[index].workshopMaterialien);
+            $("#eingabeWorkshopNr").val(workshopArray[index].workshopWorkshopNr);
+            $("#eingabe").attr("action", "javascript:datenSpeichernMA('" + index + "')");
         }
-		  
-		    function workshopsAnzeigenLoeschen(ort){
-			console.log('workshopsAnzeigenLoeschen: ' + ort);
+
+
+        function datenSpeichernMA(index) {
+            console.log("Funktion datenSpeichernMA mit " + index);
+            //Lesen der Benutzereingaben
+            var name = $("#eingabeName").val();
+            var ort = $("#eingabeOrt").val();
+            var dauer = $("#eingabeDauer").val();
+            var maxTeilnehmer = $("#eingabeMaxTeilnehmer").val();
+            var materialien = $("#eingabeMaterialien").val();
+            var workshopNr = $("#eingabeWorkshopNr").val();
+
+            //Die Länge des Arrays ist gerade immer genau 
+            // um eins größer als der max. Index des Arrays
+            workshopArray[workshopArray.length] = new Workshop(name, ort, dauer, maxTeilnehmer, materialien,
+            workshopNr);
+
+            workshopsAnzeigenAendern("workshops");
+        }
+
+
+        //Listenansicht mit Ändern-Icon für Mitarbeiter
+        function workshopsAnzeigenAendern(ort) {
+            console.log('workshopsAnzeigenAendern: ' + ort);
             //nur Listenansicht sichtbar machen
             $(".view").hide();
             $("#liste").show();
-		
+
+            //Login-Knopf zu Logout-Knopf machen
+            $("#login-button-MA").html("Ausloggen")
+                .attr("onclick", "ausloggen()");
+
             //Listenansicht initialisieren
-		      $('#' + ort).empty();
-			
-			//Array-Schleife: für jeden Eintrag Erzeugung eines Buch-Eintrags in die Listenansicht
-			for (var i = 0; i < workshopArray.length; i++) {
-				workshopEinhaengenLoeschen(i, ort);
-			}
-			   
-		}
-		  
-		//HILFSFUNKTIONEN
-		  
-		    function workshopEinhaengen(index, ort){
+            $('#' + ort).empty();
+
+            //Array-Schleife: für jeden Eintrag Erzeugung eines Buch-Eintrags in die Listenansicht
+            for (var i = 0; i < workshopArray.length; i++) {
+                workshopEinhaengenAendern(i, ort);
+            }
+
+        }
+
+        //LÖSCHEN
+
+        function workshopLoeschen(index) {
+            console.log("Funktion workshopLoeschen mit " + index);
+            workshopArray.splice(index, 1);
+        }
+
+        function workshopsAnzeigenLoeschen(ort) {
+            console.log('workshopsAnzeigenLoeschen: ' + ort);
+            //nur Listenansicht sichtbar machen
+            $(".view").hide();
+            $("#liste").show();
+
+            //Listenansicht initialisieren
+            $('#' + ort).empty();
+
+            //Array-Schleife: für jeden Eintrag Erzeugung eines Buch-Eintrags in die Listenansicht
+            for (var i = 0; i < workshopArray.length; i++) {
+                workshopEinhaengenLoeschen(i, ort);
+            }
+
+        }
+
+        //HILFSFUNKTIONEN
+
+        function workshopEinhaengen(index, ort) {
             console.log("Funktion workshopEinhaengen mit " + index + ", " + ort);
             /*Erzeugung eines HTML-Strings für eine Zeile
               durch Erzeugen eines HTML-Fragments für ein Workshop und dazu jeweils ein Ändern- und ein Löschknopf
 			  und Anhängen des Strings als neues Element im ort-Tag
             */
-			$("#" + ort).append(
-				  '<li id="' + index + '">' 
-				      + workshop(index) 
-				    //  + '</li>'
-				// Ändern Icon
-				     + button(index, "zeigeEingabemaske2",                             "../pics/bearbeiten_icon.png")
-				//Löschen Icon
-				     + button(index, "zeigeSicherheitsabfrage",                       "../pics/Muelleimer.icon.jpg")
+            $("#" + ort).append(
+                '<li id="' + index + '">' +
+                workshop(index)
+                //  + '</li>'
+                // Ändern Icon
+                +
+                button(index, "zeigeEingabemaske2", "../pics/bearbeiten_icon.png")
+                //Löschen Icon
+                +
+                button(index, "zeigeSicherheitsabfrage", "../pics/Muelleimer.icon.jpg")
                 //   + '</li>'
-				   
-                    + '</li>'
-            );  
-			   
-			}
-		      //Für Kundenansicht ohne Ändern und Löschen Icon
-		  
-		      function workshopEinhaengen1(index, ort){
+
+                +
+                '</li>'
+            );
+
+        }
+        //Für Kundenansicht ohne Ändern und Löschen Icon
+
+        function workshopEinhaengen1(index, ort) {
             console.log("Funktion workshopEinhaengen1 mit " + index + ", " + ort);
             /*Erzeugung eines HTML-Strings für eine Zeile
               durch Erzeugen eines HTML-Fragments für ein Workshop 
             */
-			$("#" + ort).append(
-				  '<li id="' + index + '">' 
-				      + workshop(index) 
-                    + '</li>'
-            );  
-			   
-			}
-		  
-		  //Listenansicht mit Ändern-Icon
-		      function workshopEinhaengenAendern(index, ort){
+            $("#" + ort).append(
+                '<li id="' + index + '">' +
+                workshop(index) +
+                '</li>'
+            );
+
+        }
+
+        //Listenansicht mit Ändern-Icon
+        function workshopEinhaengenAendern(index, ort) {
             console.log("Funktion workshopEinhaengenAendern mit " + index + ", " + ort);
             /*Erzeugung eines HTML-Strings für eine Zeile
               durch Erzeugen eines HTML-Fragments für ein Workshop und dazu jeweils ein Ändern-button */
-			$("#" + ort).append(
-				  '<li id="' + index + '">' 
-				      + workshop(index) 
-				    //  + '</li>'
-				// Ändern Icon
-				     + button(index, "zeigeEingabemaskeMA",                             "../pics/bearbeiten_icon.png")
-                    + '</li>'
-            );  
-			   
-			}
-		
-		  
-		  
+            $("#" + ort).append(
+                '<li id="' + index + '">' +
+                workshop(index)
+                //  + '</li>'
+                // Ändern Icon
+                +
+                button(index, "zeigeEingabemaskeMA", "../pics/bearbeiten_icon.png") +
+                '</li>'
+            );
 
-		  function workshop(index){
+        }
+
+
+
+
+        function workshop(index) {
             console.log("Funktion workshop mit " + index);
             /* In dieser Funktion wird jeweils der Arrayeintrag der index-ten Stelle als Ast erzeugt (der später in die Baumstruktur des DOM als Ast gehängt werden kann)
-            */
-            var workshop="";
+             */
+            var workshop = "";
             //Erzeuge Titel-Ast
-            var name="";
-            name="<label>Name</label>";
-            name=name + "<div>" + workshopArray[index].workshopName + "</div>";
-                    
+            var name = "";
+            name = "<label>Name</label>";
+            name = name + "<div>" + workshopArray[index].workshopName + "</div>";
+
             //Erzeuge Ort
-            var ort="";
-            ort="<label>Ort</label>";
-            ort=ort + "<div>" + workshopArray[index].workshopOrt + "</div>";
-            
+            var ort = "";
+            ort = "<label>Ort</label>";
+            ort = ort + "<div>" + workshopArray[index].workshopOrt + "</div>";
+
             //Erzeuge Dauer
-            var dauer="";
-            dauer="<label>Dauer</label>";
-            dauer=dauer + "<div>" + workshopArray[index].workshopDauer + "</div>";
-            
+            var dauer = "";
+            dauer = "<label>Dauer</label>";
+            dauer = dauer + "<div>" + workshopArray[index].workshopDauer + "</div>";
+
             //Erzeuge Max. Teilnehmer
-            var maxTeilnehmer="";
-            maxTeilnehmer="<label>Max.Teilnehmer</label>";
-            maxTeilnehmer=maxTeilnehmer + "<div>" + workshopArray[index].workshopMaxTeilnehmer + "</div>";
-            
-			//Erzeuge Materialien
-            var materialien="";
-            materialien="<label>Materialien</label>";
-            materialien=materialien + "<div>" + workshopArray[index].workshopMaterialien + "</div>";
-            
-			//Erzeuge WorkshopNr
-            var workshopNr="";
-            workshopNr="<label>WorkshopNr</label>";
-            workshopNr=workshopNr + "<div>" + workshopArray[index].workshopWorkshopNr + "</div>";
-            
-            workshop =    "<div>" + name   + "</div>"
-                        + "<div>" + ort  + "</div>"
-                        + "<div>" + dauer + "</div>"
-                        + "<div>" + maxTeilnehmer   + "</div>"
-			            + "<div>" + materialien   + "</div>"
-			            + "<div>" + workshopNr   + "</div>";
-            
+            var maxTeilnehmer = "";
+            maxTeilnehmer = "<label>Max.Teilnehmer</label>";
+            maxTeilnehmer = maxTeilnehmer + "<div>" + workshopArray[index].workshopMaxTeilnehmer + "</div>";
+
+            //Erzeuge Materialien
+            var materialien = "";
+            materialien = "<label>Materialien</label>";
+            materialien = materialien + "<div>" + workshopArray[index].workshopMaterialien + "</div>";
+
+            //Erzeuge WorkshopNr
+            var workshopNr = "";
+            workshopNr = "<label>WorkshopNr</label>";
+            workshopNr = workshopNr + "<div>" + workshopArray[index].workshopWorkshopNr + "</div>";
+
+            workshop = "<div>" + name + "</div>" +
+                "<div>" + ort + "</div>" +
+                "<div>" + dauer + "</div>" +
+                "<div>" + maxTeilnehmer + "</div>" +
+                "<div>" + materialien + "</div>" +
+                "<div>" + workshopNr + "</div>";
+
             return workshop;
-			  
+
         }
-             
-	        function zeigeEingabemaske(index){
-			console.log('zeigeEingabemaske ' + index);
-            
+
+        function zeigeEingabemaske(index) {
+            console.log('zeigeEingabemaske ' + index);
+
             //nur Eingabemaske sichtbar machen
             $(".view").hide();
             $("#eingabe").show();
-            
+
             //Eingabemaske initialisieren
             $("#eingabe input").val("");
-            $("#eingabe input[type='submit']").val("Speichern"); 
-            $("#eingabe").attr("action","javascript:datenSpeichern('')");           
-		}
-		  
-		  
-        function button(id, func, bildpfad){
-            console.log("Funktion button mit " 
-                          + id + ", "
-                          + func + ", "
-                          + bildpfad
-                       );
-            var button=""; 
-            //Das mit \ "escaped" Anführungszeichen ist die dritte verschachtelte Ebene für Anführungszeichen
-            button="<img onclick='" 
-                   + func + "(\"" + id + "\")'"
-                   + "class='bildknopf'"
-                   + "src='" + bildpfad + "'/>";  
-			
-			
-            return button;
-			
-			
+            $("#eingabe input[type='submit']").val("Speichern");
+            $("#eingabe").attr("action", "javascript:datenSpeichern('')");
         }
-		  
-	
-		  
-		  //Sicherheitsabfrage für löschen
-		  function zeigeSicherheitsabfrage(index){
+
+
+        function button(id, func, bildpfad) {
+            console.log("Funktion button mit " +
+                id + ", " +
+                func + ", " +
+                bildpfad
+            );
+            var button = "";
+            //Das mit \ "escaped" Anführungszeichen ist die dritte verschachtelte Ebene für Anführungszeichen
+            button = "<img onclick='" +
+                func + "(\"" + id + "\")'" +
+                "class='bildknopf'" +
+                "src='" + bildpfad + "'/>";
+
+
+            return button;
+
+
+        }
+
+
+
+        //Sicherheitsabfrage für löschen
+        function zeigeSicherheitsabfrage(index) {
             console.log("Funktion zeigeSicherheitsabfrage mit " + index);
             //Wenn Benutzer auf OK klickt, dann wird der Wahrheitswert
             // TRUE zurückgegeben
-            if(confirm("Wollen Sie wirklich löschen?")){
+            if (confirm("Wollen Sie wirklich löschen?")) {
                 workshopLoeschen(index);
                 workshopsAnzeigen('workshops');
             }
-			  
-		  
-		  }
-		
-		  
-	  
-	  </script>
-  </body>
-  
+
+
+        }
+    </script>
+</body>
+
 </html>
-
-
