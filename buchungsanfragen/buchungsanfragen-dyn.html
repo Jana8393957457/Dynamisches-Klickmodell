@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<!-- ***************************************************************
+* Diese Datei gehört zum  WebEng-Kurs an der HNU
+* Copyright (c) by Melina Krupp                         
+* Licensed under GPL3, see http://www.gnu.org/licenses/gpl.html
+******************************************************************** -->
+<html lang="de">
+  
+<head>
+	<title>Buchungsanfragen</title>
+    <!-- Bestimme den vom Browser zu benutzenden Zeichensatz -->
+	<meta charset="UTF-8" />
+  
+    <link href="../stylesheets/style-buchungsanfragen.css" rel="stylesheet">
+    <script type="text/javascript" src="../client-js/jquery-3.5.1.min.js"></script>
+  
+  <style>
+  
+    li{
+      display: inline-block;
+      margin-right: 1rem;
+    }
+    
+  #buchungsanfragen li {
+      border: solid black;
+    }
+  
+    
+    .adminButton{
+      margin: 0,5rem;
+    }
+    
+  </style>
+  
+  
+  
+  </head>
+
+<body class="startseite">
+    
+    <header class="site-header">
+      
+		<h1 class="site-logo"> </h1>
+          <img  src="../pics/logo.PNG" 
+                alt="KLEUR het KOPJE"
+                width="180"
+                height="154"> 
+    
+      
+          <button id="logKnopf" onclick="zeigeLoginmaske()">Einloggen</button>
+      </header>
+      
+      <nav class="site-nav">
+    
+    <ul class="site-nav-list">
+      <li><a href="../index-dyn.html">Home</a> </li>
+      <li><a href="../allgemeineInfos/allgemeineInfo.html">Allgemeine Infos</a></li>
+      <li><a href="../workshops/workshops.html">Workshops</a></li>
+      <li><a href="../events/events.html">Individuelle Events</a></li>
+      <li><a href="buchungsanfragen.html" class="sie-sind-hier">Buchungsanfragen</a></li> 
+    </ul>
+  
+  </nav>
+      
+      
+      
+    
+    <main class="site-content">
+     
+     <!-- KUNDEN ANSICHT/ NORMALE ANSICHT -->
+    
+    <form id="standardMaske" class="view" action="" method="post">
+      <h1>Termin buchen</h1>
+      <div class="eingabe">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Name eingeben"/>
+      </div>
+
+      <div class="eingabe">
+        <label for="mail">E-Mail:</label>
+        <input type="email" id="mail" name="mail" placeholder="E-Mail Adresse eingeben"/>
+      </div>
+
+      <div class="eingabe">
+        <label for="telefon">Telefon:</label>
+        <input type="text" id="telefon" name="telefon"  placeholder="Telefonnummer eingeben"/><br/> 
+      </div>
+
+      <div class="eingabe">
+        <label for="veranstaltung">Event/Workshop:</label>
+        <input type="text" id="veranstaltung" name="veranstaltung" placeholder="Event/ Workshop eingeben"/><br/>
+      </div>
+
+      <div class="eingabe">
+        <label for="termin">Termin:</label>
+        <input type="datetime" id="termin" name="termin" placheholder="TT.MM.JJJJ" /><br/>
+      </div>
+      
+      <div class="formular">
+        <label>Anzahl Personen</label>
+        <input id="personenAnz" type="number" placeholder="--" />    
+        </div><br/>
+      
+      <div class="eingabe">
+        <label id="anmerkung" for="nachricht">Anmerkungen:</label>
+        <textarea rows="10" cols="50" placeholder="Nachricht eingeben"></textarea><br/>
+      </div>
+
+      <div>
+        <button class="button" type="submit" value="gesendet" onclick="javascript: alert('Ihre Anfrage wurde gesendet')"> Senden</button>
+      </div>
+
+    </form>
+      
+    
+  <!-- LOGINMASKE -->
+      <div id="loginMaske" class="view">
+            <h2>Logge dich ein!</h2>
+          
+            <form action="javascript:zeigeKnoepfe()" method="post">
+                <div class="formular">
+                    <label>Benutzername</label>
+                    <input type="text" placeholder="Benutzernamen eingeben"/>  
+                </div><br/>
+                <div class="formular">
+                    <label>Passwort</label>
+                    <input type="password" placeholder="Passwort eingeben"/>  
+                </div><br/>
+              <input type="submit" value="Login"/>
+            </form>
+        
+        </div>
+      
+  
+      
+      <!-- ADMIN BUTTONS --> 
+      <div id="adminbuttons">
+      
+        <!--<button class="adminButton" onclick="buchungsanfragenAnzeigen('buchungsanfragen')">Anzeigen</button>--> 
+        
+        <img onclick="zeigeEingabemaske()"
+             class="bildknopf adminButton"
+             src="../pics/glyphicons-7-user-add.png"
+             alt="anlegen"/>
+        
+        <!-- <img onclick="zeigeEingabemaske()"
+             class="bildknopf adminButton"
+             src="../pics/glyphicons-31-pencil.png"
+             alt="bearbeiten"/>
+        
+        <img onclick="zeigeSicherheitsabfrage()"
+             class="bildknopf adminButton"
+             src="../pics/glyphicons-17-bin.png"
+             alt="loeschen"/>-->
+        
+         <!--<button class="bestaetigungsbutton adminButton" onclick="javascript:zeigeBestaetigung()">Bestätigen</button>-->
+        
+      </div>    
+      
+      
+       <!-- EINGABEMASKE -->
+        <form id="eingabe"  class="view" action="">
+            <h2>Buchungsanfrage neuanlegen/ ändern</h2>
+          
+            <div class="formular">
+                <label>Name</label>
+                <input id="eingabeName" type="text" placeholder="Name eingeben"/>  
+            </div> <br/>
+          
+            <div class="formular">
+                <label>E-Mail</label>
+                <input id="eingabeMail" type="email" placeholder="E-Mail Adresse eingeben"/>  
+            </div><br/>
+          
+            <div class="formular">
+                <label>Telefon</label>
+                <input id="eingabeTelefon" type="tel" placeholder="Telefonnummer eingeben"/>  
+            </div><br/>
+          
+            <div class="formular">
+                <label>Veranstaltung</label>
+                <input id="eingabeVeranstaltung" type="text" placeholder="Event/ Workshop eingeben"/>    
+            </div><br/>
+          
+             <div class="formular">
+                <label>Termin</label>
+                <input id="eingabeTermin" type="datetime" placheholder="TT.MM.JJJJ" />    
+            </div><br/>
+          
+            <div class="formular">
+                <label>Anzahl Personen</label>
+                <input id="eingabePersonenAnz" type="number" placeholder="--"/>    
+            </div><br/>
+          
+            <div class="formular">
+              <label for="anmerkung" id="eingabeAnmerkung">Anmerkungen:</label>
+              <textarea rows="10" cols="50" placeholder="Anmerkung eingeben"></textarea><br/>
+            </div><br/>
+          
+            <input type="submit" value="Speichern" onclick="javascript:datenSpeichern('buchungsanfragen'), alert('Der Datensatz wurde gespeichert')"/>
+        </form>
+      
+      
+       <!--LISTENANSICHT -->
+        <div id="liste" class="view">
+            <h2>Folgende Buchungsanfragen sind verfügbar:</h2>
+            <div>
+                <!-- Liste aller Bücher -->         
+                <ul id="buchungsanfragen">                    
+                </ul>
+            </div>
+        </div>
+      
+      
+    </main>
+    
+    
+    <footer class="site-footer">
+      <p></p>
+      <a href="#top">Zum Seitenanfang</a>
+    </footer>
+    
+    
+    <script type="text/javascript">
+      
+      
+      
+      //Die Datenstruktur einer Buchungsanfrage
+		function Buchungsanfrage (name, mail, telefon, veranstaltung, termin,personenAnz, anmerkung){
+            console.log("Funktion Buchungsanfrage mit " +name+" "+mail+" "+telefon+" "+veranstaltung+" "+termin+" "+personenAnz+" "+anmerkung)
+			this.buchungsanfrageName=name;
+			this.buchungsanfrageMail=mail;
+            this.buchungsanfrageTelefon=telefon;
+            this.buchungsanfrageVeranstaltung=veranstaltung;
+            this.buchungsanfrageTermin=termin;
+            this.buchungsanfragePersonenAnz=personenAnz;
+            this.buchungsanfrageAnmerkung=anmerkung;
+		}
+      
+      //Dieses Array dient der Speicherung aller Buchungsanfragen
+		var buchungsanfrageArray = new Array();
+		buchungsanfrageArray[0] = new Buchungsanfrage('Sabine Müller', 's.mueller@gmail.com','0173 154678', 'Geburtstag', '30.08.2020','12','Gewünschte Dauer: 3 Stunden');
+		buchungsanfrageArray[1] = new Buchungsanfrage('Stefan Sauer', 'stefan78@web.de', '0153 234569', 'Einsteigerworkshop','02.07.2020','1', 'keine weiteren Anmerkungen');
+		buchungsanfrageArray[2] = new Buchungsanfrage('Beate Bauer', 'bauer.beate@t-online.de','08179 678904','Babyfußabdruck', '03.09.2020','3', '2 Teilnehmer, ein Baby');
+      
+		
+      /* CRUD-FUNKTIONEN */
+        
+        //ANZEIGEN
+       function buchungsanfragenAnzeigen(ort){
+			console.log('buchungsanfragenAnzeigen: ' + ort);
+            //nur Tabellenansicht sichtbar machen
+            $(".view").hide();
+            $("#liste").show();
+            
+            //Tabellenansicht initialisieren
+			$('#' + ort).empty();
+			
+			//Array-Schleife: für jeden Eintrag Erzeugung eines Buchungsanfragen-Eintrags in die Tabellenansicht
+			for (var i = 0; i < buchungsanfrageArray.length; i++) {
+				buchungsanfrageEinhaengen(i, ort);
+			}
+        }
+      
+      
+        //ANLEGEN 
+          function datenSpeichern(index){
+            console.log("Funktion datenSpeichern mit " + index);
+            
+            //Lesen der Benutzereingaben
+            var buchungsanfrageName=$("#eingabeName").val();
+            var buchungsanfrageMail=$("#eingabeMail").val();
+            var buchungsanfrageTelefon=$("#eingabeTelefon").val();
+            var buchungsanfrageVeranstaltung=$("#eingabeVeranstaltung").val();
+            var buchungsanfrageTermin=$("#eingabeTermin").val();
+            var buchungsanfragePersonenAnz=$("#eingabePersonenAnz").val();
+            var buchungsanfrageAnmerkung=$("#eingabeAnmerkung").val();
+            
+            //Die Länge des Arrays ist gerade immer genau 
+            // um eins größer als der max. Index des Arrays
+            buchungsanfrageArray[buchungsanfrageArray.length] = new Buchungsanfrage(name, mail, telefon, veranstaltung, termin, personenAnz, anmerkung);
+            
+            buchungsanfragenAnzeigen("buchungsanfragen");
+            
+        }
+        
+      
+      
+        //AENDERN/ BEARBEITEN
+          //Eingabemaske mit vorhandenen Werten 
+      
+       function zeigeAenderungsmaske(index){
+			console.log('zeigeAenderungsmaske ' + index);
+            
+            //nur Eingabemaske sichtbar machen
+            $(".view").hide();
+            $("#eingabe").show();
+            
+            //Eingabemaske initialisieren
+            $("#eingabe input").val("");
+            $("#eingabe input[type='submit']").val("Speichern"); 
+             
+                      
+            //Daten in die Eingabemaske eintragen
+            $("#eingabeName").val(buchungsanfrageArray[index].buchungsanfrageName);
+            $("#eingabeMail").val(buchungsanfrageArray[index].buchungsanfrageMail);
+            $("#eingabeTelefon").val(buchungsanfrageArray[index].buchungsanfrageTelefon);
+            $("#eingabeVeranstaltung").val(buchungsanfrageArray[index].buchungsanfrageVeranstaltung);
+            $("#eingabeTermin").val(buchungsanfrageArray[index].buchungsanfrageTermin);
+            $("#eingabePersonenAnz").val(buchungsanfrageArray[index].buchungsanfragePersonenAnz);
+            $("#eingabeAnmerkung").val(buchungsanfrageArray[index].buchungsanfrageAnmerkung);
+            $("#eingabe").attr("action","javascript:datenSpeichern('" + index +"')");             
+		}
+        
+      
+      
+        //LOESCHEN 
+          function buchungsanfrageLoeschen(index){
+            console.log("Funktion buchungsanfrageLoeschen mit " + index);
+            buchungsanfrageArray.splice(index,1);
+        }
+          
+          
+          //HILFSFUNKTIONEN
+      
+            /*function zeigeBestaetigung(){
+              console.log('zeigeBestaetigung()');
+              alert('Die Buchungsbestätigung wurde an den Kunden versandt');
+              //nur Loginansicht sichtbar machen
+              $(".bestaetigungsbutton").hide();
+            }*/
+            
+      
+            function buchungsanfrageEinhaengen(index, ort){
+            console.log("Funktion buchungsanfrageEinhaengen mit " + index + ", " + ort);
+            /*Erzeugung eines HTML-Strings für eine Zeile
+              durch Erzeugen eines HTML-Fragments für eine Buchungsanfrage und dazu jeweils ein Ändern- und ein Löschknopf
+			  und Anhängen des Strings als neues Element im ort-Tag
+            */
+			$("#" + ort).append(
+				  '<li id="' + index + '">' 
+				    + buchungsanfrage(index) 
+                    
+                //Ändern 
+				      + button(index, "zeigeAenderungsmaske", "../pics/glyphicons-31-pencil.png")
+              
+				//Löschen 
+				      + button(index, "zeigeSicherheitsabfrage",  "../pics/glyphicons-17-bin.png")
+              
+                //Bestätigungsbutton
+                      //+ button(index,"zeigeBestaetigung()", "../pics/bestaetigung-haken.png") 
+              
+                      + '</li>'
+            );
+		}
+          
+           function buchungsanfrage(index){
+            console.log("Funktion buchungsanfrage mit " + index);
+            /* In dieser Funktion wird jeweils der Arrayeintrag der index-ten Stelle als Ast erzeugt (der später in die Baumstruktur des DOM als Ast gehängt werden kann)
+            */
+            var buchungsanfrage="";
+             
+            //Erzeuge Name-Ast
+            var name="";
+            name="<label>Kundenname</label>";
+            name=name + "<div>" + buchungsanfrageArray[index].buchungsanfrageName + "</div>";
+                    
+            //Erzeuge Mail-Ast
+            var mail="";
+            mail="<label>Kundenmail</label>";
+            mail=mail + "<div>" + buchungsanfrageArray[index].buchungsanfrageMail + "</div>";
+            
+            //Erzeuge Telefon-Ast
+            var telefon=0;
+            telefon="<label>Telefonnummer Kunde</label>";
+            telefon=telefon + "<div>" + buchungsanfrageArray[index].buchungsanfrageTelefon + "</div>";
+            
+            //Erzeuge Veranstaltung-Ast
+            var veranstaltung="";
+            veranstaltung="<label>Veranstaltung</label>";
+            veranstaltung=veranstaltung + "<div>" + buchungsanfrageArray[index].buchungsanfrageVeranstaltung + "</div>";
+             
+            //Erzeuge Termin-Ast
+            var termin="";
+            termin="<label>Termin</label>";
+            termin=termin + "<div>" + buchungsanfrageArray[index].buchungsanfrageTermin + "</div>";
+             
+            //Erzeuge Anzahl-Ast
+            var personenAnz="";
+            personenAnz="<label>Anzahl Personen</label>";
+            personenAnz=personenAnz + "<div>" + buchungsanfrageArray[index].buchungsanfragePersonenAnz + "</div>";
+             
+             
+            //Erzeuge Anmerkungs-Ast
+            var anmerkung="";
+            anmerkung="<label>Anmerkung</label>";
+            anmerkung=anmerkung + "<div>" + buchungsanfrageArray[index].buchungsanfrageAnmerkung + "</div>";
+            
+            buchungsanfrage =    "<div>" + name   + "</div>"
+                    + "<div>" + mail   + "</div>"
+                    + "<div>" + telefon + "</div>"
+                    + "<div>" + veranstaltung   + "</div>";
+                    + "<div>" + termin   + "</div>";
+                    + "<div>" + personenAnz   + "</div>";
+                    + "<div>" + anmerkung   + "</div>";
+            
+            return buchungsanfrage;
+        }
+          
+            function button(id, func, bildpfad){
+            console.log("Funktion button mit " 
+                          + id + ", "
+                          + func + ", "
+                          + bildpfad
+                       );
+            var button=""; 
+            //Das mit \ "escaped" Anführungszeichen ist die dritte verschachtelte Ebene für Anführungszeichen
+            button="<img onclick='" 
+                   + func + "(\"" + id + "\")'"
+                   + "class='bildknopf'"
+                   + "src='" + bildpfad + "'/>";            
+            return button;
+        }
+                  
+          
+          
+        function zeigeLoginmaske(){
+            console.log('zeigeLoginmaske');
+            //nur Loginansicht sichtbar machen
+            $(".view").hide();
+            $("#loginMaske").show();
+        }
+        
+        function zeigeKnoepfe(){       
+            console.log('zeigeKnoepfe');
+            //Adminsicht sichtbar machen
+            $(".view").hide();
+            $("#liste ").show();
+            buchungsanfragenAnzeigen('buchungsanfragen');
+            
+            //Login-Knopf zu Logout-Knopf machen
+            $("#logKnopf").html("Ausloggen")
+                          .attr("onclick","ausloggen()");
+            //Adminbuttons zeigen
+            $(".adminButton").show();
+            
+        }
+       function zeigeEingabemaske(index){
+			console.log('zeigeEingabemaske ' + index);
+            
+            //nur Eingabemaske sichtbar machen
+            $(".view").hide();
+            $("#eingabe").show();
+            
+            //Eingabemaske initialisieren
+            $("#eingabe input").val("");
+            $("#eingabe input[type='submit']").val("Speichern"); 
+            $("#eingabe").attr("action","javascript:datenSpeichern('')");                              
+		}
+        
+        
+        function ausloggen(){
+            //nur Standardsicht sichtbar machen
+            $(".view").hide();
+            $("#standardMaske").show();
+            //Logout-Knopf zu Login-Knopf machen
+            $("#logKnopf").html("Einloggen")
+                          .attr("onclick","zeigeLoginmaske()");
+            //Adminbuttons verbergen
+            $(".adminButton").hide();
+        }
+      
+        function zeigeSicherheitsabfrage(index){
+            console.log("Funktion zeigeSicherheitsabfrage mit " + index);
+            //Wenn Benutzer auf OK klickt, dann wird der Wahrheitswert
+            // TRUE zurückgegeben
+            if(confirm("Wollen Sie die Anfrage wirklich löschen?")){
+                buchungsanfrageLoeschen(index);
+                buchungsanfragenAnzeigen('buchungsanfragen');
+            }
+        }
+        
+        
+        ausloggen(); 
+          
+        
+        
+      
+    </script>
+
+	
+  </body>
+  
+</html>
+
+
+
+
+
+
+

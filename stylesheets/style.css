@@ -1,0 +1,78 @@
+/*Gestaltung der Navigation*/
+.site-nav{
+  position: sticky;
+  top: 0;
+  background-color: white;
+  height: 180px;
+}
+
+.site-nav li{
+  display: inline;
+  color: #adaaae;
+}
+
+.site-slogan{
+  color: #cc5093;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.site-logo{
+  margin-bottom: 0;
+}
+th{
+  padding: 0 2rem;
+}
+.site-nav a{
+  text-decoration: none;
+  color: #adaaae;
+}
+.site-nav a:hover, 
+.site-nav a:focus {
+  color: #cc5093;
+} 
+.site-nav a:active {
+  color: #666;
+}
+.site-nav a.sie-sind-hier{
+  color: #b5478f;
+  text-decoration: underline;
+}
+/*Gestaltung der Tabelle*/
+th, td{
+  padding: 1.5rem;
+}
+
+/*Gestaltung der Buttons*/
+button{
+  color: #cc5093;
+  border-radius: 2rem;
+  padding: 0.25rem;
+  margin: 0.25rem;
+}
+button a{
+  text-decoration: none;
+  color: #b5478f;
+}
+button a:hover, 
+button a:focus {
+  color: pink;
+} 
+button a:active{
+  color: gray;
+}
+
+/*Gestaltung des gesamten Seiteninhalts*/
+.site-content{
+  min-width: 300px;
+  max-width: 900px;
+  margin: auto;
+}
+.inhalt{
+  text-align: center;
+}
+
+html{
+	font-family: sans-serif;
+}
+

@@ -1,0 +1,225 @@
+html{
+	font-family: 'Catamaran'; 
+	background-image:url("../pics/Hintergrundmuster_Aquarell.jpg");/*background-image: url("Hintergrund.jpg");*/
+	background-color: #ebdede;
+}
+.site-content{
+	width: auto;
+	margin-left: 150px;
+	margin-right: 150px;
+	background-color: #e1dfe2; 
+	margin-bottom: 16px;
+	margin-top: 16px;
+	
+}
+.site-nav{
+  position: sticky;
+  top: 0;
+  background-color: #dbcce0;
+  height: 80px;
+  padding: 1em 1em 0 1em;
+  
+}
+
+.site-nav li{
+  display: inline;
+  color: #ffffff;
+}
+.site-nav a{
+  text-decoration: none;
+  color: #ffffff;
+	padding: 1em;
+}
+
+.site-nav a:hover, 
+.site-nav a:focus {
+  color: #959595;
+} 
+.site-nav a:active {
+  color: #666;
+}
+.site-nav a.sie-sind-hier{
+  color: #414041;
+  text-decoration: underline;
+}
+.workshops {
+	text-align: center;
+	color: white;
+	}
+
+
+.crud-button:hover,
+.crud-button:focus{
+	color: #5f5258;
+   cursor: pointer
+}
+
+.crud-button:active{
+	color: whitesmoke;
+}
+
+.crud-button{
+	border: none;
+	border-radius: 0.25rem;
+	padding: 0.5rem;
+	margin: 8px;
+}
+
+.buchen-button{
+	padding: 1em;
+	margin: 10px 0 10px 650px;
+	border-radius: 0.25rem;
+	border: none;
+	text-decoration: none;
+}
+
+footer{
+	background-color:#dbcce0; 
+}
+/* Gestaltung der Subseite "Anlegen" */
+
+
+.anlegen-dokument{
+	padding: 1em;
+	margin: 10px;
+	height: 1500px;
+}
+
+h3{
+	padding: 1em;
+	text-align: center;
+	background-color: #88afa1;
+}
+
+.button-anlegen:hover,
+.button-anlegen:focus{
+	color: #5f5258;
+   cursor: pointer
+}
+
+.button-anlegen:active{
+	color: whitesmoke;
+;
+}
+
+.button-anlegen,{
+	border: none;
+	border-radius: 0.25rem;
+	padding: 1em;
+	margin: 20px;
+}
+
+
+h2{
+	padding: 1em;
+	text-align: center;
+	background-color: #bdcbc6;
+	color: #f4f4f4
+}
+.workshop-beschreibung{
+	
+	padding: 1em;
+}
+
+/* Gestaltung Login Maske*/
+ 
+#login-button-admin{
+	border: none;
+	border-radius: 0.25rem;
+	padding: 1em;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+}
+
+
+#login-button-admin:hover,
+#login-button-admin:focus{
+	cursor: pointer;
+	color: #5f5258;
+	
+}
+
+#login-button-MA{
+	border: none;
+	border-radius: 0.25rem;
+	padding: 1em;
+	position: absolute;
+	top: 15px;
+	right: 120px;
+}
+#login-button-MA:hover,
+#login-button-MA:focus{
+	cursor: pointer;
+	color: #5f5258;
+	
+}
+
+label{
+	 
+	text-align: right;
+	padding: 1em;
+	margin: 1em;
+	width: 5em;
+	text-decoration: none;
+
+	
+}
+
+input{
+	display: block;
+	margin: 1em;
+	width: 15em;
+	padding: 0.5em;
+	border-radius: 0.25rem;
+}
+
+#workshops li{
+    border:1px solid white;
+    margin:5px;
+    float:left; /* Damit die Einträge nebeneinander stehen */
+	text-align: left
+}
+
+#workshops div{
+	margin: 10px;
+}
+
+#footerliste{
+	margin-top: 900px;
+	margin-bottom: 10px;
+}
+h4{
+	text-align: center;
+}
+
+#polaroid{
+	margin: 1em;
+}
+.box1{
+	float: left;
+}
+
+.box2{
+	float: right;
+}
+
+.absatzWorkshop{
+	width: 600px;
+	height: 450px;
+	margin: 1em;
+	}
+
+#anzButton{
+	
+	position:absolute;
+	top: 1210px;
+	bottom:30px;
+	left: 220px;
+	right: 200px;
+	
+}
+
+#liste{
+	background-color: #e2d8e5;
+}

@@ -1,0 +1,176 @@
+/*Gestaltung der Schrift*/
+body {
+	font-family: Noto Sans, sans-serif;
+    font-size: 1.25em;
+}
+
+/*Gestaltung der Navigation*/
+.site-nav{
+  position: sticky;
+  top: 0;
+  background-color: white;
+  height: 180px;
+}
+
+.site-nav li{
+  display: inline;
+  color: #adaaae;
+}
+
+.site-slogan{
+  color: #cc5093;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.site-logo{
+  margin-bottom: 0;
+}
+th{
+  padding: 0 2rem;
+}
+.site-nav a{
+  text-decoration: none;
+  color: #adaaae;
+}
+.site-nav a:hover, 
+.site-nav a:focus {
+  color: #cc5093;
+} 
+.site-nav a:active {
+  color: #666;
+}
+.site-nav a.sie-sind-hier{
+  color: #b5478f;
+  text-decoration: underline;
+}
+
+/*Gestaltung des Footers*/
+footer li, a{
+  display: inline;
+  color: #cc5093;
+  text-decoration: none;
+}
+footer{
+	background-color: #d7d7d9;
+	padding: 0.5rem;
+	text-align: right;
+    font-size: smaller;
+    margin-top: 3rem;
+}
+/*Gestaltung der Tabelle*/
+#topic{
+	padding-bottom: 0px;
+	background-color: white;
+	text-align: left;
+}
+
+th, td{
+  padding: 1.5rem;
+  
+}
+.events{
+  min-width: 150px;
+}
+.first{
+  font-weight: bold;
+  color: #b5478f;
+}
+.preis{
+  width: 60px;
+}
+.dauer{
+  width: 80px;
+}
+.datum{
+  width: 135px;
+}
+
+
+thead{
+  background-color: #f5d1e5;
+}
+
+#allEvents li{
+    border:5px #b5478f;
+    border-style: none none none dotted;
+    margin:10px;
+    float:left; /* Damit die Einträge nebeneinander stehen */
+    display: block; /* Damit die Aufzählungspunkte entfernt werden */
+    padding: 3rem 3rem 0.75rem 3rem;
+    background-color: rgba(245, 209, 229, 0.44);
+}
+
+/*Gestaltung der Buttons*/
+button, .in{
+  color: #cc5093;
+  border-radius: 2rem;
+  padding: 0.25rem;
+  margin: 0.25rem;
+}
+button a, .in{
+  text-decoration: none;
+  color: #b5478f;
+}
+button a:hover, 
+button a:focus {
+  color: pink;
+} 
+button a:active{
+  color: gray;
+}
+#anlegen{
+  background-color: white;
+}
+/*Gestaltung der Bild-Buttons*/
+.bildknopf, .maButton {
+	height: 40px;
+	border: 5px solid #adaaae;
+	margin: 2rem 2rem 0 0;
+	border-radius: 25px;
+}
+
+/*Gestaltung des gesamten Seiteninhalts*/
+.site-content{
+  min-width: 300px;
+  max-width: 900px;
+  margin: auto;
+}
+.inhalt, #loginMaske{
+  text-align: center;
+}
+/*Gestaltung der Formulare*/
+input[placeholder="Titel eingeben"],
+input[value="Dauer eintragen"],
+input[value="max. Teilnehmer"],
+input[value="xxx €"],
+input[value="TT/MM/JJJJ"]{
+  color: #d4d4d4;
+}
+label{
+  font-weight: bold;
+}
+
+.formular{
+  width: 16rem;
+  padding: 0.5rem;
+  border: 1px solid #eee;
+  border-radius: 0.25rem;
+  margin: 0.5rem 0rem 1rem 0;
+}
+.input{
+  width: 13rem;
+  padding: 0.5rem;
+  border: 1px solid #eee;
+  border-radius: 0.25rem;
+  margin: 0.5rem 0rem 1rem 0;
+  color: #adaaae;
+
+}
+input[type="submit"]{
+  color: #cc5093;
+  border-radius: 2rem;
+  padding: 0.25rem;
+  margin: 0.25rem;
+}
+

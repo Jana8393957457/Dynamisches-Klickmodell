@@ -1,0 +1,107 @@
+
+/*Gestaltung Nav und Footer*/
+
+.site-nav{
+  background-color: gray;
+  height: 50px;
+  position: sticky;
+  top: 0;
+  
+}
+
+.site-nav a:hover, .site-footer a:hover,
+.site-nav a:focus, .site-footer a:focus{
+  color:black;
+}
+
+.site-nav-list li{
+  display: inline;
+  margin-right: 1em;
+  
+}
+
+.site-nav-list,
+.site-footer{
+  background-color:gray;
+  padding: 0.5em;
+}
+
+.site-footer{
+  height: 200px;
+  margin-top: 30px;
+}
+
+.site-nav-list a ,
+.site-footer a{
+  color: white;
+  text-decoration: none;
+}
+
+.site nav-list a, a.sie-sind-hier{
+  text-decoration: underline;
+}
+
+/*Gestaltung Body*/
+
+.site-content{
+  padding: 0.5em;
+  padding-bottom: 2em;
+}
+
+button a {
+  
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  
+  
+ 
+}
+
+
+/*Gestaltung Tabelle*/
+
+th, td{
+  padding: 1em;
+  text-align: center;
+}
+
+table{
+  border-collapse: collapse;
+}
+
+
+
+thead{
+  height: 50px;
+  padding-bottom: 40px;
+  background-color: lightgray;
+}
+
+
+/*Gestaltung Kontaktformular*/
+
+label{
+  display:block;
+}
+
+.eingabe{
+  margin: 1rem; 
+  font-weight: bold;
+}
+
+button[type=submit] {
+  margin-left: 350px;
+  margin-bottom: 40px;
+}
+
+/*td{
+  background-color: lightgray;
+}*/
+
+
+  
+
+
+
+  

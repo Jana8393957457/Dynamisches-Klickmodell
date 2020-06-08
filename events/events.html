@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<!-- ***************************************************************
+* Diese Datei gehört zum  WebEng-Kurs an der HNU
+* Copyright (c) by Julia Lorenz                         
+* Licensed under GPL3, see http://www.gnu.org/licenses/gpl.html
+******************************************************************** -->
+<html>
+  <head>
+      <title>Statisches Klickmodell</title>
+      <!-- Bestimme den vom Browser zu benutzenden Zeichensatz -->
+      <meta charset="UTF-8" />
+      <link href="../stylesheets/style_events.css" rel="stylesheet">
+      <script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
+  </head>
+
+  <body class="startseite">
+    
+    <header class="site-header">
+      
+    <!-- <p class="site-slogan">KLEUR het KOPJE</p> -->
+    </header>
+    
+    <nav class="site-nav">
+      <table>
+        <tr>
+           <th>
+             <h1 class="site-logo">
+              <a href="../index-dyn.html"> 
+                <img src="../pics/logo.PNG" 
+                alt="KLEUR het KOPJE"
+               width="180"
+               height="154"> 
+              </a>
+            </h1></th>
+          <ul>
+            <th><li><a href="../index-dyn.html">Home</a></li></th>
+            <th><li><a href="../allgemeineInfos/allgemeineInfo.html">Allgemeine Informationen</a></li></th>  
+            <th><li><a href="../workshops/workshops.html">Workshops</a></li></th>
+            <th><li><a href="events.html" class="sie-sind-hier">Individuelle Events</a></li></th>
+            <th><li><a href="../buchungsanfragen/buchungsanfragen-dyn.html">Buchungsanfragen</a></li></th>
+            <th><button id="logKnopf" onclick="zeigeLoginMaske()">Login</button></th>
+            <th><li><a id="adminBereich" onclick="adminBereich()" style="display: none">Admin Bereich</a></li></th>
+            <th><li><a id="maBereich" onclick="maBereich()" style="display: none">Mitarbeiter Bereich</a></li></th>
+          </ul>
+        </tr>
+        
+      </table>
+          
+      
+    </nav>
+      
+        
+    <main class="site-content">
+      
+      <!--STANDARD ANSICHT -->
+      <table id="standardMaske1">
+        
+        <thead>
+          <tr><th id="topic" colspan="6"><h2>Übersicht individuelle Events</h2></th></tr>
+          <tr>
+            <th>Titel</th>
+            <th>Dauer</th>
+            <th>Maximale Teilnehmeranzahl</th>
+            <th class="preis">Preis</th>
+            <th>Datum</th>
+          </tr>  
+        </thead>
+        <tb>
+          <tr>
+            <td class="first">Geburtstagsfeier</td>
+            <td class="dauer">2 Stunden</td>
+            <td>10</td>
+            <td class="preis">20 € p.P</td>
+            <td class="datum">Nach Vereinbarung</td>
+          </tr> 
+        </tb>
+        <tb>
+          <tr>
+            <td class="first">Junggesellenabschied</td>
+            <td class="dauer">3 Stunden</td>
+            <td>15</td>
+            <td class="preis">20 € p.P</td>
+            <td class="datum">Nach Vereinbarung</td>
+          </tr> 
+        </tb>
+        <tb>
+          <tr>
+            <td class="first">Firmenfeier</td>
+            <td class="dauer">2 Stunden</td>
+            <td>20</td>
+            <td class="preis">15 € p.P</td>
+            <td class="datum">Nach Vereinbarung</td>
+          </tr> 
+        </tb>
+        <tb>
+          <tr>
+            <td class="first">Jubiläumsfeier</td>
+            <td class="dauer">1 Stunde</td>
+            <td>25</td>
+            <td class="preis">10 € p.P</td>
+            <td class="datum">Nach Vereinbarung</td>
+          </tr> 
+        </tb>        
+        
+      </table>
+      
+              <!--LISTENANSICHT -->
+        <div id="liste" class="view" style="display: none">
+            <h2>Folgende Events werden angeboten:</h2>
+            <div>
+              <button id="anlegenButton" onclick="zeigeEingabemaske()" style="display: none">Neuanlegen</button>
+                <!-- Liste aller Events -->         
+                <ul id="allEvents">                    
+                </ul>
+            </div>
+        </div>
+      
+      
+      <!-- Login Maske -->
+      <div id="loginMaske" style="display: none">
+        <form action="javascript:zeigeAdminBereich()" method="post">
+          <h3>Bitte loggen Sie sich ein</h3>
+          <label>Benutzername</label><br>
+          <input class="input" type="text" value="Benutzername eingeben..."/><br>
+          <label>Passwort</label><br>
+          <input class="input" type="password" value="Passwort.."/><br>
+            
+          <input class="input" type="submit" value="Login">
+            
+        </form>
+      </div>
+      
+      
+      <!-- Ändern Seite (Eingabemaske) -->
+      <div id="aendernSeite" style="display: none">
+       <h2>Event ändern</h2>
+        <form id="eingabe"  class="view" action="">
+          <div class="formular">
+            <label>Titel</label> <br>
+            <input id="eingabeTitel" class="input" type="text" placeholder="Titel eingeben"/>  
+          </div>
+          <div class="formular">
+            <label>Dauer</label> <br>
+            <input id="eingabeDauer" class="input" type="text" placeholder="Dauer eingeben"/>  
+          </div>
+          <div class="formular">
+            <label>Maxiale Teilnehmerzahl</label> <br>
+            <input id="eingabeMaxTeilnehmer" class="input" type="text" placeholder="Maximale Teilnehmeranzahl eingeben"/>  
+          </div>
+          <div class="formular">
+            <label>Preis</label> <br>
+            <input id="eingabePreis" class="input" type="text" placeholder="Preis eingeben"/>  
+          </div>
+          <div class="formular">
+            <label>Datum</label> <br>
+            <input id="eingabeDatum" class="input" type="text" placeholder="Datum eingeben"/>  
+          </div>
+          <input type="submit" value="Speichern"/>
+        </form>   
+          <br>
+          <br>
+          <button onclick="zurueck()">Zurück</button>
+      </div>
+      
+      
+      
+    </main>
+    
+    <footer>  
+      
+      <a href="#top">Zum Seitenanfang</a>
+    
+    </footer>
+    
+    <script type="text/javascript">
+      
+      function zeigeLoginMaske(){
+        //Prüfung auf Funktionalität
+        console.log("Funktion zeigeLoginMaske");
+        $("#liste").css("display", "none");
+        //Sichtbarmachen der Loginmaske 
+        $("#loginMaske").css("display","block");
+        //Unsichtbarmachen der Standardmaske
+        $("#standardMaske1").css("display", "none");
+      }
+      
+      function zeigeAdminBereich(){
+        //Prüfung auf Funktionalität
+        console.log("Funktion zeigeAdminBereich");
+        //Sichtbarmachen der erweiterten Funktionalitäten
+        $("#adminBereich").css("display","inline-block");
+        //Sichtbarmachen der erweiterten Funktionalitäten
+        $("#maBereich").css("display","inline-block");
+        //Unsichtbarmachen der Loginmaske 
+        $("#loginMaske").css("display","none");
+        //Sichtbarmachen der Standardmaske
+        $("#liste").css("display","block");
+        //Login-Knopf zu Logout-Knopf machen
+        $("#logKnopf").html("Logout")
+                      .attr("onclick","ausloggen()");
+        
+        //Alle Events sichtbar machen
+        eventsAnzeigen('allEvents');
+        //Bearbeitungsknöpfe verbergen, da keine Adminansicht
+        $(".bildknopf").css("display","none");
+        $(".maButton").css("display","none");
+
+      }
+      
+      function ausloggen(){
+        //Prüfung auf Funktionalität
+        console.log("Funktion ausloggen");
+        
+        //Unsichtbarmachen der Loginmaske 
+        $("#loginMaske").css("display","none");
+        //Logout-Knopf zu Login-Knopf machen
+        $("#logKnopf").html("Login")
+                      .attr("onclick","zeigeLoginMaske()");
+        //Admin-Bereich unsichtbar machen
+        $("#adminBereich").css("display","none");
+        //Mitarbeiter-Bereich unsichtbar machen
+        $("#maBereich").css("display","none");
+        //Eingabemaske unsichtbar machen
+        $("#aendernSeite").hide();
+        //Sichtbarmachen der Standardmaske
+        $("#liste").show();
+        
+        //Anlegen-Button unsichtbar machen
+        $("#anlegenButton").hide();        
+        //Bearbeitungsknöpfe verbergen, da keine Adminansicht
+        $(".bildknopf").css("display","none");
+        $(".maButton").css("display","none");
+
+  
+      }
+      
+      function adminBereich(){
+        //Prüfung auf Funktionalität
+        console.log("Funktion adminBereich");
+        
+        //Anlegen-Button sichtbar machen
+        $(".bildknopf").css("display","block");
+        $("#anlegen").css("display","block");
+        //Ändern-Seite unsichtbar machen
+        $("#aendernSeite").hide();
+        //Anlegen-Button sichtbar machen
+        $("#anlegenButton").show();
+        
+        //Alle Events zeigen
+        eventsAnzeigen('allEvents');
+
+
+      }
+      
+      function maBereich(){
+        //Prüfung auf Funktionalität
+        console.log("Funktion maBereich");
+        
+        //Ändern-Seite unsichtbar machen
+        $("#aendernSeite").hide(); 
+        //Alle Events sichtbar machen
+        eventsAnzeigen('allEvents');
+        //Löschenknöpfe verbergen, da Mitarbeiter weniger Rechte hat als Admin
+        $(".bildknopf").css("display","none");
+    
+        
+      } 
+      
+      function anlegenBereich(){
+        //Prüfung auf Funktionalität
+        console.log("Funktion anlegenBereich");
+        //Anlegen-Seite sichtbar machen
+        $("#anlegenSeite").css("display","block");
+      }
+      
+      function loeschen(){
+        //Prüfung auf Funktionalität
+        console.log("Funktion loeschen");
+        confirm("Möchten Sie das Event wirklich löschen?"); 
+      }       
+      
+      function zurueck(){
+        //Prüfung auf Funktionalität
+        console.log("Funktion zurueck");
+        //Anlegen-Button sichtbar machen
+        $(".bildknopf").css("display","block");
+        $("#anlegen").css("display","block");
+        //Ändern-Seite unsichtbar machen
+        $("#aendernSeite").hide();
+        //Alle Events zeigen
+        eventsAnzeigen('allEvents');
+      }
+      
+      //Die Datenstruktur eines Events
+        function Event (titel, dauer, maxTeilnehmer, preis, datum){
+            console.log("Funktion Event mit " +titel+dauer+maxTeilnehmer+preis+datum)
+			this.eventtitel = titel;
+			this.eventdauer = dauer;
+            this.eventmaxTeilnehmer = maxTeilnehmer;
+            this.eventpreis = preis;
+            this.eventdatum = datum;
+		}
+      
+      //Dieses Array dient der Speicherung aller Events.
+		var eventArray = new Array();
+		eventArray[0] = new Event('Geburtstagsfeier', '2 Stunden','10', '20 € p.P', 'nach Vereinbarung');
+		eventArray[1] = new Event('Junggesellenabschied', '3 Stunden', '15', '20 € p.P', 'nach Vereinbarung');
+		eventArray[2] = new Event('Firmenfeier', '1 Stunde','20','10 € p.P', 'nach Vereinbarung');
+        eventArray[3] = new Event('Jubiläumsfeier', '1 Stunde','25','10 € p.P', 'nach Vereinbarung');
+      
+      /* CRUD-FUNKTIONEN */
+      
+      
+        //ANZEIGEN
+        function eventsAnzeigen(ort){
+			console.log('eventsAnzeigen: ' + ort);
+            //nur Listenansicht sichtbar machen
+            $(".view").hide();
+            $("#liste").show();
+            
+            //Listenansicht initialisieren
+			$('#' + ort).empty();
+			
+			//Array-Schleife: für jeden Eintrag Erzeugung eines Event-Eintrags in die Listenansicht
+			for (var i = 0; i < eventArray.length; i++) {
+				eventEinhaengen(i, ort);
+              
+			}
+		}
+      
+        //ANLEGEN
+        function datenSpeichern(index){
+            console.log("Funktion datenSpeichern mit " + index);
+            //Lesen der Benutzereingaben
+            var titel=$("#eingabeTitel").val();
+            var dauer=$("#eingabeDauer").val();
+            var maxTeilnehmer=$("#eingabeMaxTeilnehmer").val();
+            var preis=$("#eingabePreis").val();
+            var datum=$("#eingabeDatum").val();
+            
+            //Ändern-Seite unsichtbar machen
+            $("#aendernSeite").hide();
+            
+            console.log("\t ändern mit " + index);
+            //Ändern der Eventdaten im Array
+            eventArray[eventArray.length]= new Event(titel, dauer, maxTeilnehmer, preis, datum);
+            
+            eventsAnzeigen("allEvents");
+        }
+      
+        //ÄNDERN
+      
+       function zeigeEingabemaske1(index){
+			console.log('zeigeEingabemaske1' + index);
+            
+            //nur Eingabemaske sichtbar machen
+            $(".view").hide();
+            $("#eingabe").show();
+         
+            $("#aendernSeite").show();
+         
+            
+            //Eingabemaske initialisieren
+            $("#eingabe input").val("");
+            $("#eingabe input[type='submit']").val("Speichern"); 
+                      
+            //Daten in die Eingabemaske eintragen
+            $("#eingabeTitel").val(eventArray[index].eventtitel);
+            $("#eingabeDauer").val(eventArray[index].eventdauer);
+            $("#eingabeMaxTeilnehmer").val(eventArray[index].eventmaxTeilnehmer);
+            $("#eingabePreis").val(eventArray[index].eventpreis);
+            $("#eingabeDatum").val(eventArray[index].eventdatum);
+            $("#eingabe").attr("action","javascript:datenSpeichern('" + index +"')");           
+		}
+      
+      //LÖSCHEN
+      
+        function eventLoeschen(index){
+              console.log("Funktion eventLoeschen mit " + index);
+              eventArray.splice(index,1);
+          }
+      
+      
+      
+       //HILFSFUNKTIONEN
+        function eventEinhaengen(index, ort){
+            console.log("Funktion eventEinhaengen mit " + index + ", " + ort);
+            /*Erzeugung eines HTML-Strings für eine Zeile
+              durch Erzeugen eines HTML-Fragments für ein Event und dazu jeweils ein Ändern- und ein Löschknopf
+			  und Anhängen des Strings als neues Element im ort-Tag
+            */
+			$("#" + ort).append(
+				  '<li id="' + index + '">' 
+				    + event(index)
+                    //Ändern Button
+                    + buttonMa(index, "zeigeEingabemaske1",                             "../pics/bearbeiten.PNG")
+                    //Löschen Button
+                    + button(index, "zeigeSicherheitsabfrage",                       "../pics/loeschen.PNG")
+                    + '</li>'
+            );
+		}
+      
+        function event(index){
+            console.log("Funktion event mit " + index);
+            /* In dieser Funktion wird jeweils der Arrayeintrag der index-ten Stelle als Ast erzeugt (der später in die Baumstruktur des DOM als Ast gehängt werden kann)
+            */
+            var event="";
+            //Erzeuge Titel-Ast
+            var titel="";
+            titel="<label>Titel</label>";
+            titel=titel + "<div>" + eventArray[index].eventtitel + "</div>";
+                    
+            //Erzeuge Dauer
+            var dauer="";
+            dauer="<label>Dauer</label>";
+            dauer=dauer + "<div>" + eventArray[index].eventdauer + "</div>";
+            
+            //Erzeuge maximale Teilnehmeranzahl
+            var maxTeilnehmer="";
+            maxTeilnehmer="<label>Maximale Teilnehmeranzahl</label>";
+            maxTeilnehmer=maxTeilnehmer + "<div>" + eventArray[index].eventmaxTeilnehmer + "</div>";
+        
+            //Erzeuge Preis
+            var preis=0;
+            preis="<label>Preis</label>";
+            preis=preis + "<div>" + eventArray[index].eventpreis + "</div>";
+            
+            //Erzeuge Datum
+            var datum=0;
+            datum="<label>Datum</label>";
+            datum=datum + "<div>" + eventArray[index].eventdatum + "</div>";
+            
+            
+            event =    "<div>" + titel   + "</div>"
+                    + "<div>" + dauer   + "</div>"
+                    + "<div>" + maxTeilnehmer + "</div>"
+                    + "<div>" + preis   + "</div>"
+                    + "<div>" + datum   + "</div>";
+            
+            return event;
+        }
+      
+          function zeigeEingabemaske(index){
+			console.log('zeigeEingabemaske ' + index);
+            
+            //nur Eingabemaske sichtbar machen
+            $(".view").hide();
+            $("#eingabe").show();
+          
+            $("#aendernSeite").show();
+            
+            //Eingabemaske initialisieren
+            $("#eingabe input").val("");
+            $("#eingabe input[type='submit']").val("Speichern"); 
+            $("#eingabe").attr("action","javascript:datenSpeichern('')");      
+           
+		}
+         //Funktion Button 
+          function button(id, func, bildpfad){
+            console.log("Funktion button mit " 
+                          + id + ", "
+                          + func + ", "
+                          + bildpfad
+                       );
+            //Variable Button
+            var button=""; 
+            //Das mit \ "escaped" Anführungszeichen ist die dritte verschachtelte Ebene für Anführungszeichen
+            button="<img onclick='" 
+                   + func + "(\"" + id + "\")'"
+                   + "class='bildknopf'"
+                   + "src='" + bildpfad + "'/>";            
+            return button;
+        }
+          //Funktion Button Mitarbeiter
+           function buttonMa(id, func, bildpfad){
+            console.log("Funktion button mit " 
+                          + id + ", "
+                          + func + ", "
+                          + bildpfad
+                       );
+            //Variable Button
+            var buttonMa=""; 
+            //Das mit \ "escaped" Anführungszeichen ist die dritte verschachtelte Ebene für Anführungszeichen
+            buttonMa="<img onclick='" 
+                   + func + "(\"" + id + "\")'"
+                   + "class='maButton'"
+                   + "src='" + bildpfad + "'/>";            
+            return buttonMa;
+        }
+      
+          
+      
+          function zeigeSicherheitsabfrage(index){
+            console.log("Funktion zeigeSicherheitsabfrage mit " + index);
+            //Wenn Benutzer auf OK klickt, dann wird der Wahrheitswert
+            //TRUE zurückgegeben
+            if(confirm("Wollen Sie das Event wirklich löschen?")){
+                eventLoeschen(index);
+                eventsAnzeigen('allEvents');
+            }}
+      
+         
+        
+                
+        
+    
+    </script>
+
+  </body>
+  
+</html>
+
+
+
+
+

@@ -1,0 +1,214 @@
+
+/*Navigationslistenelemente insgesamt styling*/
+.site-nav li {
+    
+display: inline;
+color: white;
+padding:0rem;
+list-style: none;
+    font-family:sans-serif;
+    text-align: center;
+    font-size:20px;
+}
+
+
+
+
+.item-navi{
+ 
+background-color: #ba8e96;
+    text-align: center;
+    font-size: 20px;
+    
+  
+
+   
+}
+
+
+.item-logo{
+   padding-left: 650px;
+    padding-top: 3rem;
+ 
+}
+
+
+  
+.navigation ul li {
+    display: inline-block;}
+
+
+.navigation li a{
+    display: block;
+    width: 30px;list-style-type: none;
+    
+    text-align: center;
+    padding-right: 4rem;
+    padding-left: 4rem;
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    
+    
+}
+
+    .kontakt{
+        background-color:grey;
+        color:white;
+        
+      margin-top: 20rem;
+    font-size: 30px;
+        font-family: sans-serif;
+      
+     
+    }
+    
+    .impressumKontakt{
+       
+        
+        font-family: sans-serif;
+        background-color: darkgray;
+        color: white;
+       margin-top: 2rem;
+      
+    }
+/*Hyperlinks in der Navigation Home bearbeiten*/
+
+.navigation a{
+  text-decoration: none;
+  color:black;
+}
+.navigation a:hover, 
+.site-nav a:focus {
+  color: lightsteelblue;
+} 
+.navigation a:active {
+  background:lightblue;
+}
+.navigation a.sie-sind-hier{
+ text-decoration: underline;
+  
+}
+
+
+
+/*Gestaltung der Buttons*/
+/*button{
+  color: #cc5093;
+  border-radius: 2rem;
+}*/
+#anlegen{
+  background-color: white;
+}
+/*Gestaltung des gesamten Seiteninhalts*/
+.site-content{
+  min-width: 300px;
+  max-width: 2000px;
+  margin: auto;
+    font-family:  'Arial', sans-serif;
+   
+}
+
+button{
+    color: white;
+    background-color: lightpink;
+    font-size: 20px;
+    
+    
+}
+
+.loginButton{
+    color: white;
+    background-color: lightpink;
+    font-size: 20px;
+}
+
+
+ 
+
+.topic {
+    margin-top: 4rem;
+    font-size: 25px;
+    font-family:  'Arial', sans-serif;
+    
+}
+
+.anlegenSchrift{
+        font-size: 25px;
+    font-family:  'Arial', sans-serif;
+}
+
+.aendernSchrift{
+       font-size: 25px;
+    font-family:  'Arial', sans-serif;
+}
+
+.loeschenInfo{
+      font-size: 25px; 
+    font-family:  'Arial', sans-serif;
+}
+
+.anzeigenSchrift{
+        font-size: 25px;
+    font-family:  'Arial', sans-serif;
+}
+
+.buttonAnlegen{
+    
+    margin-top: 1rem;
+    margin-left: 0px;
+    font-size: 25px;
+    
+ 
+}
+
+#texteinfuegen{
+    
+    margin-top: 1rem;
+    
+}
+    
+.fotoWerkstatt{
+       position: relative;
+    overflow: hidden;
+        
+    }
+
+#texteingabe{
+    resize: none;
+    overflow: auto;
+}
+
+/* Validation stylesheet*/
+
+#content{
+        font-family: sans-serif;
+        
+    }
+
+
+   
+p{
+    font-family: sans-serif;
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+.startseiteButton{
+    font-family: sans-serif;
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+.impressumKontakt{
+    font-size: 15px;
+   
+    
+}
+h2{
+    padding:0;
+    
+}
+
