@@ -6,392 +6,389 @@
 ******************************************************************** -->
 
 <html>
-                <head> <meta charset="utf-8">
-                <!-- Einbinden vom Stylesheet-->
-                <link href="../stylesheets/style-allgemeineInfo.css" rel="Stylesheet">
-    
-                <!-- Einbinden von Java Query-->
-                <script type="text/javascript" src="../client-js/jquery-3.5.1.min.js"></script>
-     
-                <title> KLEUR het KOPJE- Allgemeine Information</title> <!-- Name des Tabs im Browser-->
-       
-                </head> 
-    
 
-    
-        <body class="startseite">
-   
-                            <header>
-        
-                            <!--Logo einfügen-->
-                            <div class="item-logo"><img id="logo" src="../pics/Logo_Jana.jpg" alt="KLEUR het KOPJE" width="150" height="150"></div>
-           
-      
-                            <!--Navigation mit Login Button-->   
-                            <div class="item-navi">
-                            <nav class="navigation">
-                            <ul>
-                            <li><a href="../index-dyn.html" >Home</a></li>
-                                <li><a href="../allgemeineinfos/allgemeineInfo.html"class="sie-sind-hier">Allgemeine Informationen</a></li>
-                            <li><a href="../workshops/workshops.html">Workshops</a></li>
-                            <li><a href="../events/events.html">Individuelle Events</a></li>
-                            <li><a href="../buchungsanfragen/buchungsanfragen.html">Buchungsanfragen</a></li>
-                                
-               <button id="login-button-admin" onclick="zeigeLoginmaskeAdmin()"> Admin-Login</button>
-		<button id="login-button-MA" onclick="zeigeLoginmaskeMA()"> Mitarbeiter-Login </button>
-                            </ul>
-                                
-                           </nav>
-       
-                            </div>
-             
-                            </header>
-     
-     
+<head>
+    <meta charset="utf-8">
+    <!-- Einbinden vom Stylesheet-->
+    <link href="../stylesheets/style-allgemeineInfo.css" rel="Stylesheet">
+
+    <!-- Einbinden von Java Query-->
+    <script type="text/javascript" src="../client-js/jquery-3.5.1.min.js"></script>
+
+    <title> KLEUR het KOPJE- Allgemeine Information</title> <!-- Name des Tabs im Browser-->
+
+</head>
+
+
+
+<body class="startseite">
+
+    <header>
+
+        <!--Logo einfügen-->
+        <div class="item-logo"><img id="logo" src="../pics/Logo_Jana.jpg" alt="KLEUR het KOPJE" width="150"
+                height="150"></div>
+
+
+        <!--Navigation mit Login Button-->
+        <div class="item-navi">
+            <nav class="navigation">
+                <ul>
+                    <li><a href="../index-dyn.html">Home</a></li>
+                    <li><a href="../allgemeineinfos/allgemeineInfo.html" class="sie-sind-hier">Allgemeine
+                            Informationen</a></li>
+                    <li><a href="../workshops/workshops.html">Workshops</a></li>
+                    <li><a href="../events/events.html">Individuelle Events</a></li>
+                    <li><a href="../buchungsanfragen/buchungsanfragen.html">Buchungsanfragen</a></li>
+                </ul>
+                <button id="login-button-admin" onclick="zeigeLoginmaskeAdmin()"> Admin-Login</button>
+                <button id="login-button-MA" onclick="zeigeLoginmaskeMA()"> Mitarbeiter-Login </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
     <main class="site-content">
-        
+
         <!-- NORMALE ANSICHT -->
         <div id="standardMaske">
             <div>
-             <p>Willkommen! Auf dieser Seite kannst du durch unsere Informationen stöbern und erfährst alles was du wissen musst.<br> 
-            Bei Fragen stehen wir dir natürlich auch sehr gerne zur Verfügung. Viel Spaß!</p>   
-                 <div>
-            <p>Hier kannst Du dir
-                <button class="startseiteButton" onclick="infosAnzeigen('infos')">Informationen anzeigen</button> lassen</p>
-                     </div>
-            <!-- Bild vom Buchladen einfügen-->
-                <div> <img class="fotoWerkstatt" src="../pics/WhatsApp%20Image%202020-05-13%20at%2009.27.30.jpeg" alt="Keramikmalwerkstatt Juliane Klein" width="700" height="450"></div>
-           <div class="impressumKontakt">Impressum Kontakt</div> 
-        
-    </div> 
-    </div>
-        
-        
-        
-    
-   <!--LISTENANSICHT -->
-		
-        <div id="liste" class="view" style="display=none" >
+                <p>Willkommen! Auf dieser Seite kannst du durch unsere Informationen stöbern und erfährst alles was du
+                    wissen musst.<br>
+                    Bei Fragen stehen wir dir natürlich auch sehr gerne zur Verfügung. Viel Spaß!</p>
+                <div>
+                    <p>Hier kannst Du dir
+                        <button class="startseiteButton" onclick="infosAnzeigen('infos')">Informationen
+                            anzeigen</button> lassen</p>
+                </div>
+                <!-- Bild vom Buchladen einfügen-->
+                <div> <img class="fotoWerkstatt" src="../pics/keramik_foto_01.jpeg"
+                        alt="Keramikmalwerkstatt Juliane Klein" width="700" height="450"></div>
+                <div class="impressumKontakt">Impressum Kontakt</div>
+
+            </div>
+        </div>
+
+
+
+
+        <!--LISTENANSICHT -->
+
+        <div id="liste" class="view" style="display: none">
             <div>
-                <!-- Liste aller Informationen -->         
-                <button id="anlegenButton" onclick="zeigeEingabemaske()" style="display: none">Neue Info anlegen</button>
-                <!-- Liste aller Events -->         
-                <ul id="infoListe">                    
+                <!-- Liste aller Informationen -->
+                <button id="anlegenButton" onclick="zeigeEingabemaske()" style="display: none">Neue Info
+                    anlegen</button>
+                <!-- Liste aller Events -->
+                <ul id="infoListe">
                 </ul>
             </div>
         </div>
-			 
- 
-    
-    
-    
-<!-- LOGINMASKE Admin-->
+
+
+
+
+
+        <!-- LOGINMASKE Admin-->
         <div id="loginMaske" style="display:none">
             <h2>Bitte logge dich ein Admin!</h2>
             <form action="javascript:zeigeAdminBereich()" method="post">
                 <div class="formular">
                     <label>Benutzername</label>
-                    <input type="text" placeholder="Benutzernamen eingeben"/>  
+                    <input type="text" placeholder="Benutzernamen eingeben" />
                 </div>
                 <div class="formular">
                     <label>Passwort</label>
-                    <input type="password" placeholder="Passwort eingeben"/>  
+                    <input type="password" placeholder="Passwort eingeben" />
                 </div>
-            <input type="submit" value="Login"/>
-        </form>
-        
+                <input type="submit" value="Login" />
+            </form>
+
         </div>
-	
-    <div style="width:50%;height:1000px;background-color:white"></div>
-  
-     
-    
-    
-    
-    
-    
-<!-- LOGINMASKE MA -->
+
+
+        <!-- LOGINMASKE MA -->
         <div id="loginMaskeMA" style="display:none">
             <h2>Bitte logge dich ein Mitarbeiter!</h2>
             <form action="javascript:zeigeMaBereich()" method="post">
-             
+
                 <div class="formular">
                     <label>Benutzername</label>
-                    <input type="text" placeholder="Benutzernamen eingeben"/>  
+                    <input type="text" placeholder="Benutzernamen eingeben" />
                 </div>
                 <div class="formular">
                     <label>Passwort</label>
-                    <input type="password" placeholder="Passwort eingeben"/>  
+                    <input type="password" placeholder="Passwort eingeben" />
                 </div>
-            <input type="submit" value="Login">
-              
-                
-        </form>
-        </div>
-         <div style="width:50%;height:1000px;background-color:white"></div>
-   
-   
-    
-    
-   
-    
-    
-    
-    
-                                            <!--CRUD Operatoren-->
-    
-<!--ändern-->
-    <button  class="crud-button" style="display: none" onclick="infosAnzeigenAendern('info')"> ändern </button>
-<!--anlegen-->
-	 <button  class = "crud-button"  style="display: none" onclick="zeigeEingabemaske()"> Anlegen </button> 
-<!--löschen-->			
-	<button class="crud-button" style="display: none" onclick="infosAnzeigenLoeschen('info')"> 
-					  Löschen
-					  </button>
+                <input type="submit" value="Login">
 
-    
-    
-<!--Eingabemaske Informationen ändern noch ohne Validierung!-->
-    <div id="eingabe" style="display:none">
-    <!--Formular zur Validitätsfunktion. Validierung bis jetzt aber noch nicht funktionsfähig-->
-        <!--<form action="javascript:zeigeEingabemaske()">-->
-        
-       <div class="formular">    
-            <div class="ueberschriftInfoAnlegen"><h2>Information ändern</h2></div>
-    
-            <div>
-             <label>Informationsnummer:<br></label>
-            <input id="input-Informationsnummer" type="text" placeholder="Informationsnummer eingeben"/><br>
-              </div>
-            
-             <div>
-                 <label>Bildmaterial:<br></label>
-            <input type="text" id="input-Bildmaterial" placeholder="ja/nein?"><br>
-              </div>
-    
-            <div>  
-                <label>Name des Autors:<br></label>
-                <input type="text" id="input-Name-Autor" placeholder="Name des Autors"><br>
-              </div>
-              
-            <div>    
-                <label>Datum:<br></label>
-                <input type="date" id="input-Datum"><br>
-              </div>
-              
-            <div>
-                <label for="zeichenAnzahl">Zeichen Anzahl:<br></label>
-            <input type="text" id="input-Zeichen-Anzahl" placeholder="Bitte in Zahlen angeben"><br>
-             </div>
-            
-            <div>
-                <label>Buchstaben Anzahl:<br></label>
-            <input type="text" id="input-Buchstaben-Anzahl" placeholder="Bitte in Zahlen angeben"><br>
-             </div>
-       
-    
-   <input type="submit" value="Speichern"/>
-            
-           
+
+            </form>
         </div>
-   
-    </div> 
-  
-</main>   
-    
-    
-   <script type="text/javascript">
-        function zeigeLoginmaskeAdmin(){
+        <div style="width:50%;height:1000px;background-color:white"></div>
+
+
+
+        <!--CRUD Operatoren-->
+
+        <!--ändern-->
+        <button class="crud-button" style="display: none" onclick="infosAnzeigenAendern('info')"> ändern </button>
+        <!--anlegen-->
+        <button class="crud-button" style="display: none" onclick="zeigeEingabemaske()"> Anlegen </button>
+        <!--löschen-->
+        <button class="crud-button" style="display: none" onclick="infosAnzeigenLoeschen('info')">
+            Löschen
+        </button>
+
+
+
+        <!--Eingabemaske Informationen ändern noch ohne Validierung!-->
+        <div id="eingabe" style="display:none">
+            <!--Formular zur Validitätsfunktion. Validierung bis jetzt aber noch nicht funktionsfähig-->
+            <!--<form action="javascript:zeigeEingabemaske()">-->
+
+            <div class="formular">
+                <div class="ueberschriftInfoAnlegen">
+                    <h2>Information ändern</h2>
+                </div>
+
+                <div>
+                    <label>Informationsnummer:<br></label>
+                    <input id="input-Informationsnummer" type="text" placeholder="Informationsnummer eingeben" /><br>
+                </div>
+
+                <div>
+                    <label>Bildmaterial:<br></label>
+                    <input type="text" id="input-Bildmaterial" placeholder="ja/nein?"><br>
+                </div>
+
+                <div>
+                    <label>Name des Autors:<br></label>
+                    <input type="text" id="input-Name-Autor" placeholder="Name des Autors"><br>
+                </div>
+
+                <div>
+                    <label>Datum:<br></label>
+                    <input type="date" id="input-Datum"><br>
+                </div>
+
+                <div>
+                    <label for="zeichenAnzahl">Zeichen Anzahl:<br></label>
+                    <input type="text" id="input-Zeichen-Anzahl" placeholder="Bitte in Zahlen angeben"><br>
+                </div>
+
+                <div>
+                    <label>Buchstaben Anzahl:<br></label>
+                    <input type="text" id="input-Buchstaben-Anzahl" placeholder="Bitte in Zahlen angeben"><br>
+                </div>
+
+
+                <input type="submit" value="Speichern" />
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script type="text/javascript">
+        function zeigeLoginmaskeAdmin() {
             console.log('zeigeLoginmaskeAdmin');
             //nur Loginansicht sichtbar machen
             $(".view").hide();
             $("#loginMaske").show();
-             $("#standardMaske").hide();
+            $("#standardMaske").hide();
             $("#loginMaskeMA").hide();
-        } </script>
-            
-            <script type="text/javascript">
-        function zeigeLoginmaskeMA(){
+        }
+    </script>
+
+    <script type="text/javascript">
+        function zeigeLoginmaskeMA() {
             console.log('zeigeLoginmaskeMA');
             //nur Loginansicht sichtbar machen
             $(".view").hide();
             $("#loginMaskeMA").show();
-             $("#standardMaske").hide();
-             $("#loginMaske").hide();
-        } </script>
-                                                
-     <script type="text/javascript"> 
-         function zeigeAdminBereich(){       
+            $("#standardMaske").hide();
+            $("#loginMaske").hide();
+        }
+    </script>
+
+    <script type="text/javascript">
+        function zeigeAdminBereich() {
             //Unsichtbarmachen der Loginmaske
             $("#loginMaske").hide();
             //Sichtbarmachen der Standardmaske            
             $("#standardMaske").hide();
-            
+
             //Sichtbarmachen der erweiterten Funktionalitäten
-            
-            
+
+
             //Login-Knopf zu Logout-Knopf machen
             $("#login-button-admin").html("Ausloggen")
-                          .attr("onclick","ausloggen()");
-            
-         }</script>
-                          
-  
-    
-<!--MA Bereich Button-->
-    
-      
-       <script type="text/javascript">    
-           function zeigeMaBereich(){       
+                .attr("onclick", "ausloggen()");
+
+        }
+    </script>
+
+
+
+    <!--MA Bereich Button-->
+
+
+    <script type="text/javascript">
+        function zeigeMaBereich() {
             //Unsichtbarmachen der Loginmaske
             $("#loginMaskeMA").hide();
             //Unsichtbarmachen der Standardmaske            
             $("#standardMaske").hide();
             //Unsichtbarmachen der Informationen für den Kunden
-           
-            
+            $("#liste").show();
+
             //Sichtbarmachen der erweiterten Funktionalitäten
-            
-            
+
+
             //Login-Knopf zu Logout-Knopf machen
             $("#login-button-MA").html("Ausloggen")
-                          .attr("onclick","ausloggen()");
-              
-            
-        }</script>
-    
-    
-<!--Ausloggen--> 
-        <script type="text/javascript">
-            function ausloggen(){
+                .attr("onclick", "ausloggen()");
+
+
+        }
+    </script>
+
+
+    <!--Ausloggen-->
+    <script type="text/javascript">
+        function ausloggen() {
             //Logout-Knopf zu Login-Knopf machen
             $("#login-button-admin").html("Admin-Login")
-                          .attr("onclick","zeigeLoginmaskeAdmin()");
-                
-            $("#login-button-MA").html("Mitarbeiter-Login")
-                          .attr("onclick","zeigeLoginmaskeMA()");
-           // Nur Standardmaske sichtbar machen
-            $("#standardMaske").show();
-           
-        }</script>
-    
-   
+                .attr("onclick", "zeigeLoginmaskeAdmin()");
 
-  
-            <script type="text/javascript">
-        
-      //DATENSTRUKTUR der Informationsliste
-    function Info (informationsNr, bildmaterial, nameAutor, datum, zeichenAnzahl, buchstabenAnzahl) {
-        console.log("zeigeInformationMitarbeiter"+informationsNr+bildmaterial+nameAutor+datum+zeichenAnzahl+buchstabenAnzahl)
-        this.infoNummer= informationsNr;
-        this.infoBildmaterial= bildmaterial;
-        this.infoAutor= nameAutor;
-        this.infoDatum= datum;
-        this.infoZeichenAnzahl= zeichenAnzahl;
-        this.infoBuchstaben= buchstabenAnzahl;
-    }
-        
-        </script>        
-        
-            <script type="text/javascript">
-    //Array Liste mit Informationen zur Datenhaltung
-    var infoArray = new Array();
-    infoArray[0] = new Info('123','ja','S.Schmid', '09.05.2020', 124, 110);
-    infoArray[1] = new Info('5678', 'nein', 'M.Reinhardt', '05.05.2020', 508, 499);
-    infoArray[2] = new Info('1368', 'ja', 'P.Hahne', '01.02.2020', 700, 880);
-    infoArray[3] = new Info('6804', 'nein', 'J.Clarkson', '03.03.2020', 800, 789);
-    
-        </script>
-    
-            
-            
-            
-<!--CRUD Funktionen-->
-            
-    <script type="text/javascript"> 
-        
+            $("#login-button-MA").html("Mitarbeiter-Login")
+                .attr("onclick", "zeigeLoginmaskeMA()");
+            // Nur Standardmaske sichtbar machen
+            $("#standardMaske").show();
+
+        }
+    </script>
+
+
+
+
+    <script type="text/javascript">
+        //DATENSTRUKTUR der Informationsliste
+        function Info(informationsNr, bildmaterial, nameAutor, datum, zeichenAnzahl, buchstabenAnzahl) {
+            console.log("zeigeInformationMitarbeiter" + informationsNr + bildmaterial + nameAutor + datum +
+                zeichenAnzahl + buchstabenAnzahl)
+            this.infoNummer = informationsNr;
+            this.infoBildmaterial = bildmaterial;
+            this.infoAutor = nameAutor;
+            this.infoDatum = datum;
+            this.infoZeichenAnzahl = zeichenAnzahl;
+            this.infoBuchstaben = buchstabenAnzahl;
+        }
+    </script>
+
+    <script type="text/javascript">
+        //Array Liste mit Informationen zur Datenhaltung
+        var infoArray = new Array();
+        infoArray[0] = new Info('123', 'ja', 'S.Schmid', '09.05.2020', 124, 110);
+        infoArray[1] = new Info('5678', 'nein', 'M.Reinhardt', '05.05.2020', 508, 499);
+        infoArray[2] = new Info('1368', 'ja', 'P.Hahne', '01.02.2020', 700, 880);
+        infoArray[3] = new Info('6804', 'nein', 'J.Clarkson', '03.03.2020', 800, 789);
+    </script>
+
+
+
+
+    <!--CRUD Funktionen-->
+
+    <script type="text/javascript">
         //Ändern
-        function infoSpeichern(index){
+        function infoSpeichern(index) {
             console.log("Funktion infoSpeichern mit " + index);
             //Lesen der Benutzereingaben
-            var infoNummer=$("#input-Informationsnummer").val();
-            var infoBildmaterial=$("#input-Bildmaterial").val();
-            var infoAutor=$("#input-Name-Autor").val();
-            var infoDatum=$("#input-Datum").val();
-            var infoZeichenAnzahl=$("#input-Zeichen-Anzahl").val();
-            var infoBuchstaben=$("#input-Buchstaben-Anzahl").val();
-            
+            var infoNummer = $("#input-Informationsnummer").val();
+            var infoBildmaterial = $("#input-Bildmaterial").val();
+            var infoAutor = $("#input-Name-Autor").val();
+            var infoDatum = $("#input-Datum").val();
+            var infoZeichenAnzahl = $("#input-Zeichen-Anzahl").val();
+            var infoBuchstaben = $("#input-Buchstaben-Anzahl").val();
+
             //Ändern-Seite unsichtbar machen
             $("#aendernSeite").hide();
-            
+
             console.log("\t ändern mit " + index);
             //Ändern der Eventdaten im Array
-            infoArray[infoArray.length]= new Info(infoNummer, infoBildmaterial, infoAutor, infoDatum, infoZeichenAnzahl, infoBuchstaben);
-            
-            
+            infoArray[infoArray.length] = new Info(infoNummer, infoBildmaterial, infoAutor, infoDatum,
+                infoZeichenAnzahl, infoBuchstaben);
+
+
             infoAnzeigen("allInfo");
-        } 
-            </script>
-            
-  <script type="text/javascript">       
+        }
+    </script>
+
+    <script type="text/javascript">
         //Anzeigen
-         function infosAnzeigen(ort){
+        function infosAnzeigen(ort) {
             console.log('infosAnzeigen: ' + ort);
             //nur Listenansicht sichtbar machen
             $(".view").hide();
             $("#liste").show();
-            
+
             //Listenansicht initialisieren
-			$('#' + ort).empty();
-			
-			//Array-Schleife: für jeden Eintrag Erzeugung eines Event-Eintrags in die Listenansicht
-			for (var i = 0; i < infoArray.length; i++) {
-				infoEinhaengen(i, ort);
-              
-			} 
-         }
-            </script>
-            
-        <script type="text/javascript"> 
-        
-        //Löschen
-        function infoLoeschen(index){
-            console.log("Funktion infoLoeschen mit " + index);
-              infoArray.splice(index,1);
+            $('#' + ort).empty();
+
+            //Array-Schleife: für jeden Eintrag Erzeugung eines Event-Eintrags in die Listenansicht
+            for (var i = 0; i < infoArray.length; i++) {
+                infoEinhaengen(i, ort);
+
+            }
         }
-           </script>
-            
-            
-            
-<!-- HILFSFUNKTIONEN-->
-            
-        <script type="text/javascript">
-          function infoEinhaengen(index,ort){ }
-        function info(index){ }
-            function button (id, func, bildpfad){ }
-            function zeigeEingabemaske(index){ }
-            
-            function zeigeSicherheitsabfrage(index){ 
-            console.log ("Funktion Sicherheitsabfrage mit "+ index);
-            if(confirm("Wollen Sie die Info wirklich löschen?")){
+    </script>
+
+    <script type="text/javascript">
+        //Löschen
+        function infoLoeschen(index) {
+            console.log("Funktion infoLoeschen mit " + index);
+            infoArray.splice(index, 1);
+        }
+    </script>
+
+
+
+    <!-- HILFSFUNKTIONEN-->
+
+    <script type="text/javascript">
+        function infoEinhaengen(index, ort) {}
+
+        function info(index) {}
+
+        function button(id, func, bildpfad) {}
+
+        function zeigeEingabemaske(index) {}
+
+        function zeigeSicherheitsabfrage(index) {
+            console.log("Funktion Sicherheitsabfrage mit " + index);
+            if (confirm("Wollen Sie die Info wirklich löschen?")) {
                 infoLoeschen(index);
                 infosAnzeigen('infos');
-                
-            }
-            }
-            
-         infosAnzeigen('infos');   
-            
-            </script>
-        
-     <footer>
-    
-    
-    </footer>
-    
-    </body>
-</html>
-      
-        
 
-        
+            }
+        }
+
+        infosAnzeigen('infos');
+    </script>
+
+    <footer>
+
+
+    </footer>
+
+</body>
+
+</html>
