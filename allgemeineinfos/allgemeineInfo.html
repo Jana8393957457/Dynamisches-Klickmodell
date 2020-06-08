@@ -314,41 +314,41 @@
          */
         var infos = "";
         //Erzeuge Titel-Ast
-        var informationsNr= "";
-        informationsNr = "<label>Informations Nummer:</label>";
-        informationsNr = informationsNr + "<div>" + infoArray[index].infoNummer + "</div>";
+        var infoNummer= "";
+       infoNummer = "<label>Informations Nummer:</label>";
+        infoNummer = infoNummer + "<div>" + infoArray[index].informationsNr + "</div>";
 
         //Erzeuge Bildmaterial
-        var  infoBildmaterial= "";
-        infoBildmaterial = "<label>Bildmaterial:</label>";
-        infoBildmaterial =  infoBildmaterial + "<div>" + infoArray[index].bildmaterial + "</div>";
+        var  bildmaterial= "";
+        bildmaterial = "<label>Bildmaterial:</label>";
+        bildmaterial =  bildmaterial + "<div>" + infoArray[index].infoBildmaterial + "</div>";
 
         //Erzeuge den Namen des Autors
-        var infoAutor = "";
-        infoAutor = "<label>Name des Autors:</label>";
-        infoAutor = infoAutor + "<div>" + infoArray[index].nameAutor + "</div>";
+        var nameAutor = "";
+        nameAutor = "<label>Name des Autors:</label>";
+        nameAutor = nameAutor + "<div>" + infoArray[index].infoAutor + "</div>";
 
         //Erzeuge das Datum des Eintrags
-        var infoDatum = "";
-        infoDatum = "<label>Datum:</label>";
-        infoDatum = infoDatum + "<div>" + infoArray[index].datum + "</div>";
+        var datum = "";
+        datum = "<label>Datum:</label>";
+        datum = datum + "<div>" + infoArray[index].infoDatum + "</div>";
 
         //Erzeuge die Anzahl der Zeichen im Text
-        var infoZeichenAnzahl = "";
-        infoZeichenAnzahl = "<label>Anzahl der Zeichen:</label>";
-        infoZeichenAnzahl =infoZeichenAnzahl + "<div>" + infoArray[index].zeichenAnzahl + "</div>";
+        var zeichenAnzahl = "";
+        zeichenAnzahll = "<label>Anzahl der Zeichen:</label>";
+        zeichenAnzahl =zeichenAnzahl + "<div>" + infoArray[index].infoZeichenAnzahl + "</div>";
 
         //Erzeuge die Anzahl der Buchstaben im Text
-        var infoBuchstaben = "";
-        infoBuchstaben = "<label>Anzahl der Buchstaben:</label>";
-        infoBuchstaben = infoBuchstaben + "<div>" + infoArray[index].buchstabenAnzahl + "</div>";
+        var buchstabenAnzahl = "";
+        buchstabenAnzahl = "<label>Anzahl der Buchstaben:</label>";
+        buchstabenAnzahl = buchstabenAnzahl + "<div>" + infoArray[index].infoBuchstaben + "</div>";
 
-        infos = "<div>" + informationsNr + "</div>" +
-            "<div>" + infoBildmaterial + "</div>" +
-            "<div>" + infoAutor + "</div>" +
-            "<div>" + infoDatum + "</div>" +
-            "<div>" + infoZeichenAnzahl + "</div>" +
-            "<div>" + infoBuchstaben + "</div>";
+        infos = "<div>" + infoNummer + "</div>" +
+            "<div>" + bildmaterial + "</div>" +
+            "<div>" + nameAutor + "</div>" +
+            "<div>" + datum + "</div>" +
+            "<div>" + zeichenAnzahl + "</div>" +
+            "<div>" + buchstabenAnzahl + "</div>";
 
         return infos;
 
