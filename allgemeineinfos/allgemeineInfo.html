@@ -148,56 +148,49 @@
         <button class="crud-button" style="display: none" onclick="infosAnzeigenLoeschen('infoListe')">
             Löschen
         </button>
-
+        <button class="crud-button adminButton" style="display: none" onclick="zeigeEingabemaskeanlegen()"> Anlegen
+        </button>
 
 
         <!--Eingabemaske Informationen ändern noch ohne Validierung!-->
-        <div id="eingabe" style="display:none">
+        <form id="eingabe" style="display:none" class="view" action="">
             <!--Formular zur Validitätsfunktion. Validierung bis jetzt aber noch nicht funktionsfähig-->
             <!--<form action="javascript:zeigeEingabemaske()">-->
-
-            <div class="formular">
-                <div class="ueberschriftInfoAnlegen">
-                    <h2>Information ändern</h2>
-                </div>
-
-                <div>
+                    <h2>Information anlegen/ändern</h2>
+                <div class="formular">
                     <label>Informationsnummer:<br></label>
                     <input id="input-Informationsnummer" type="text" placeholder="Informationsnummer eingeben" /><br>
                 </div>
 
-                <div>
+                <div class="formular">
                     <label>Bildmaterial:<br></label>
                     <input type="text" id="input-Bildmaterial" placeholder="ja/nein?"><br>
                 </div>
 
-                <div>
+                <div class="formular">
                     <label>Name des Autors:<br></label>
                     <input type="text" id="input-Name-Autor" placeholder="Name des Autors"><br>
                 </div>
 
-                <div>
+                <div class="formular">
                     <label>Datum:<br></label>
                     <input type="date" id="input-Datum"><br>
                 </div>
 
-                <div>
+                <div class="formular">
                     <label for="zeichenAnzahl">Zeichen Anzahl:<br></label>
                     <input type="text" id="input-Zeichen-Anzahl" placeholder="Bitte in Zahlen angeben"><br>
                 </div>
 
-                <div>
+                <div class="formular">
                     <label>Buchstaben Anzahl:<br></label>
                     <input type="text" id="input-Buchstaben-Anzahl" placeholder="Bitte in Zahlen angeben"><br>
                 </div>
 
+            <input type="submit" value="Speichern"/>
 
-                <input type="submit" value="Speichern" />
+            </form>
 
-
-            </div>
-
-        </div>
         <footer id="footer">
 
             <p></p>
@@ -292,10 +285,10 @@
     <script type="text/javascript">
         //Array Liste mit Informationen zur Datenhaltung
         var infoArray = new Array();
-        infoArray[0] = new Info('123', 'ja', 'S.Schmid', '09.05.2020', 124, 110);
-        infoArray[1] = new Info('5678', 'nein', 'M.Reinhardt', '05.05.2020', 508, 499);
-        infoArray[2] = new Info('1368', 'ja', 'P.Hahne', '01.02.2020', 700, 880);
-        infoArray[3] = new Info('6804', 'nein', 'J.Clarkson', '03.03.2020', 800, 789);
+        infoArray[0] = new Info('123', 'ja', 'S.Schmid', '2020-09-05', 124, 110);
+        infoArray[1] = new Info('5678', 'nein', 'M.Reinhardt', '2020-09-05', 508, 499);
+        infoArray[2] = new Info('1368', 'ja', 'P.Hahne', '2020-09-05', 700, 880);
+        infoArray[3] = new Info('6804', 'nein', 'J.Clarkson', '2020-09-05', 800, 789);
     </script>
 
     <script>
@@ -343,35 +336,6 @@
 
             return infos;
 
-        }
-    </script>
-
-
-
-    <!--CRUD Funktionen-->
-
-    <script type="text/javascript">
-        //Ändern
-        function infoSpeichern(index) {
-            console.log("Funktion infoSpeichern mit " + index);
-            //Lesen der Benutzereingaben
-            var infoNummer = $("#input-Informationsnummer").val();
-            var infoBildmaterial = $("#input-Bildmaterial").val();
-            var infoAutor = $("#input-Name-Autor").val();
-            var infoDatum = $("#input-Datum").val();
-            var infoZeichenAnzahl = $("#input-Zeichen-Anzahl").val();
-            var infoBuchstaben = $("#input-Buchstaben-Anzahl").val();
-
-            //Ändern-Seite unsichtbar machen
-            $("#aendernSeite").hide();
-
-            console.log("\t ändern mit " + index);
-            //Ändern der Eventdaten im Array
-            infoArray[infoArray.length] = new Info(infoNummer, infoBildmaterial, infoAutor, infoDatum,
-                infoZeichenAnzahl, infoBuchstaben);
-
-
-            infoAnzeigen("allInfo");
         }
     </script>
 
@@ -457,7 +421,7 @@
                 button(index, "zeigeEingabemaskeADM", "../pics/bearbeiten_icon.png")
                 //Löschen Icon
                 +
-                button(index, "zeigeSicherheitsabfrage", "../pics/Muelleimer.icon.jpg")
+                button(index, "zeigeSicherheitsabfrageADM", "../pics/Muelleimer.icon.jpg")
                 //   + '</li>'
 
                 +
@@ -466,6 +430,20 @@
 
         }
     </script>
+<script>        
+function zeigeEingabemaskeanlegen(index) {
+    console.log('zeigeEingabemaske anlegen ' + index);
+
+    //nur Eingabemaske sichtbar machen
+    $(".view").hide();
+    $("#eingabe").show();
+    $(".adminButton").hide();
+
+    //Eingabemaske initialisieren
+    $("#eingabe input").val("");
+    $("#eingabe input[type='submit']").val("Speichern");
+    $("#eingabe").attr("action", "javascript:infoSpeichernADM('')");
+}</script>
 
     <script>
         function zeigeEingabemaskeADM(index) {
@@ -474,21 +452,56 @@
             //nur Eingabemaske sichtbar machen
             $(".view").hide();
             $("#eingabe").show();
+            $(".adminButton").hide();
 
             //Eingabemaske initialisieren
             $("#eingabe input").val("");
             $("#eingabe input[type='submit']").val("Speichern");
 
-            //Daten in die Eingabemaske eintragen
-            $("#eingabeName").val(workshopArray[index].workshopName);
-            $("#eingabeOrt").val(workshopArray[index].workshopOrt);
-            $("#eingabeDauer").val(workshopArray[index].workshopDauer);
-            $("#eingabeMaxTeilnehmer").val(workshopArray[index].workshopMaxTeilnehmer);
-            $("#eingabeMaterialien").val(workshopArray[index].workshopMaterialien);
-            $("#eingabeWorkshopNr").val(workshopArray[index].workshopWorkshopNr);
-            $("#eingabe").attr("action", "javascript:datenSpeichern('" + index + "')");
+        //Daten in die Eingabemaske eintragen
+        $("#input-Informationsnummer").val(infoArray[index].infoNummer);
+        $("#input-Bildmaterial").val(infoArray[index].infoBildmaterial);
+        $("#input-Name-Autor").val(infoArray[index].infoAutor);
+        $("#input-Datum").val(infoArray[index].infoDatum);
+        $("#input-Zeichen-Anzahl").val(infoArray[index].infoZeichenAnzahl);
+        $("#input-Buchstaben-Anzahl").val(infoArray[index].infoBuchstaben);
+        $("#eingabe").attr("action", "javascript:infoSpeichernADM('" + index + "')");
         }
     </script>
+
+
+<script type="text/javascript">
+    function infoSpeichernADM(index) {
+        console.log("Funktion infoSpeichernADM mit " + index);
+        //Lesen der Benutzereingaben
+        var infoNummer = $("#input-Informationsnummer").val();
+        var infoBildmaterial = $("#input-Bildmaterial").val();
+        var infoAutor = $("#input-Name-Autor").val();
+        var infoDatum = $("#input-Datum").val();
+        var infoZeichenAnzahl = $("#input-Zeichen-Anzahl").val();
+        var infoBuchstaben = $("#input-Buchstaben-Anzahl").val();
+
+        //Ändern-Seite unsichtbar machen
+        $("#aendernSeite").hide();
+
+        console.log("\t ändern mit " + index);
+        //Ändern der Eventdaten im Array
+        infoArray[infoArray.length] = new Info(infoNummer, infoBildmaterial, infoAutor, infoDatum,
+            infoZeichenAnzahl, infoBuchstaben);
+
+        infosAnzeigenadm("infoListe");
+    }
+</script>
+
+<script>        
+function zeigeSicherheitsabfrageADM(index) {
+    console.log("Funktion Sicherheitsabfrage mit " + index);
+    if (confirm("Wollen Sie die Info wirklich löschen?")) {
+        infoLoeschen(index);
+        infosAnzeigenadm('infoListe');
+
+    }
+}</script>
 
     <!-- Mitarbeiter#####################################-->
     <script type="text/javascript">
@@ -554,8 +567,6 @@
         $("#input-Buchstaben-Anzahl").val(infoArray[index].infoBuchstaben);
         $("#eingabe").attr("action", "javascript:datenSpeichernMA('" + index + "')");
     }</script>
-        }
-    </script>
 
     <script type="text/javascript">
         function button(id, func, bildpfad) {
@@ -577,7 +588,28 @@
         }
     </script>
 
+<script>       
+    function datenSpeichernMA(index) {
+    console.log("Funktion datenSpeichernMA mit " + index);
+    //Lesen der Benutzereingaben
+    var informationsNr = $("#input-Informationsnummer").val();
+        var bildmaterial = $("#input-Bildmaterial").val();
+        var nameAutor = $("#input-Name-Autor").val();
+        var datum = $("#input-Datum").val();
+        var zeichenAnzahl = $("#input-Zeichen-Anzahl").val();
+        var buchstabenAnzahl = $("#input-Buchstaben-Anzahl").val();
 
+    //Die Länge des Arrays ist gerade immer genau 
+    // um eins größer als der max. Index des Arrays
+    infoArray[infoArray.length] = new Info(informationsNr, bildmaterial, nameAutor, datum, zeichenAnzahl,
+    buchstabenAnzahl);
+
+    infosAnzeigenma("infoListe");
+}</script>
+    
+
+
+<!--CRUD-Funktionen#################################-->
     <script type="text/javascript">
         //Löschen
         function infoLoeschen(index) {
@@ -588,27 +620,21 @@
 
 
 
+<script>        
+function workshopLoeschen(index) {
+    console.log("Funktion workshopLoeschen mit " + index);
+    workshopArray.splice(index, 1);
+}</script>
+
+
+
     <!-- HILFSFUNKTIONEN-->
 
     <script type="text/javascript">
         function info(index) {}
 
-        function zeigeEingabemaske(index) {}
-
-        function zeigeSicherheitsabfrage(index) {
-            console.log("Funktion Sicherheitsabfrage mit " + index);
-            if (confirm("Wollen Sie die Info wirklich löschen?")) {
-                infoLoeschen(index);
-                infosAnzeigen('infos');
-
-            }
-        }
     </script>
 
-    <footer>
-
-
-    </footer>
 
 </body>
 
