@@ -315,32 +315,36 @@
         var infos = "";
         //Erzeuge Titel-Ast
         var infoNummer= "";
-        infoNummer = "<label>Info</label>";
+        infoNummer = "<label>Informations Nummer:</label>";
         infoNummer = infoNummer + "<div>" + infoArray[index].informationsNr + "</div>";
 
         //Erzeuge Bildmaterial
         var  infoBildmaterial= "";
+<<<<<<< HEAD
         infoBildmaterial = "<label>Bildmaterial</label>";
+=======
+        infoBildmaterial = "<label>Bildmaterial:</label>";
+>>>>>>> 4100f867c71e8e1e3023b894016be14f313c343f
         infoBildmaterial =  infoBildmaterial + "<div>" + infoArray[index].bildmaterial + "</div>";
 
         //Erzeuge den Namen des Autors
         var infoAutor = "";
-        infoAutor = "<label>Dauer</label>";
+        infoAutor = "<label>Name des Autors:</label>";
         infoAutor = infoAutor + "<div>" + infoArray[index].nameAutor + "</div>";
 
         //Erzeuge das Datum des Eintrags
         var infoDatum = "";
-        infoDatum = "<label>Max.Teilnehmer</label>";
+        infoDatum = "<label>Datum:</label>";
         infoDatum = infoDatum + "<div>" + infoArray[index].datum + "</div>";
 
         //Erzeuge die Anzahl der Zeichen im Text
         var infoZeichenAnzahl = "";
-        infoZeichenAnzahl = "<label>Materialien</label>";
+        infoZeichenAnzahl = "<label>Anzahl der Zeichen:</label>";
         infoZeichenAnzahl =infoZeichenAnzahl + "<div>" + infoArray[index].zeichenAnzahl + "</div>";
 
         //Erzeuge die Anzahl der Buchstaben im Text
         var infoBuchstaben = "";
-        infoBuchstaben = "<label>WorkshopNr</label>";
+        infoBuchstaben = "<label>Anzahl der Buchstaben:</label>";
         infoBuchstaben = infoBuchstaben + "<div>" + infoArray[index].buchstabenAnzahl + "</div>";
 
         infos = "<div>" + infoNummer + "</div>" +
